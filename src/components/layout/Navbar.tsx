@@ -118,7 +118,14 @@ export const Navbar = () => {
                 transition={{ delay: 0.4, ease: [0.32, 0.72, 0, 1] }}
                 className="mt-8"
               >
-                <Button className="w-full text-lg py-4">Agendar consultoría</Button>
+                <Button 
+                  className="w-full text-lg py-4"
+                  onClick={() => setIsOpen(false)}
+                  data-cal-link="serranonevox/descubrimiento"
+                  data-cal-config='{"layout":"month_view"}'
+                >
+                  Agendar consultoría
+                </Button>
               </motion.div>
             </div>
           </motion.div>
