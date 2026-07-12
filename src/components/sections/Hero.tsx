@@ -33,7 +33,11 @@ export const Hero = () => {
           >
             Agendar consultoría gratuita
           </Button>
-          <Button variant="ghost" className="w-full sm:w-auto text-base py-4 px-8">
+          <Button 
+            variant="ghost" 
+            className="w-full sm:w-auto text-base py-4 px-8"
+            onClick={() => document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Conocer servicios
           </Button>
         </div>

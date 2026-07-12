@@ -29,7 +29,13 @@ export default function SMMA() {
               Dejamos de lado las métricas de vanidad. Diseñamos embudos de venta, pauta publicitaria y estrategias de contenido enfocadas en generar ingresos predecibles.
             </p>
             <div className="flex items-center gap-4">
-              <Button className="py-4 px-8">Auditoría gratuita</Button>
+              <Button 
+                className="py-4 px-8"
+                data-cal-link="serranonevox/descubrimiento"
+                data-cal-config='{"layout":"month_view"}'
+              >
+                Auditoría gratuita
+              </Button>
             </div>
           </div>
         </SectionWrapper>

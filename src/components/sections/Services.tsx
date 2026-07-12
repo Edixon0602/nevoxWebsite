@@ -7,7 +7,7 @@ import Link from "next/link";
 export const Services = () => {
   return (
     <SectionWrapper size="default">
-      <div className="flex flex-col mb-16 md:mb-24">
+      <div id="servicios" className="flex flex-col mb-16 md:mb-24">
         <span className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">Nuestro Ecosistema</span>
         <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-text-primary max-w-2xl text-balance">
           Dos pilares diseñados para el crecimiento sistemático.

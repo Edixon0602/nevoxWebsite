@@ -53,9 +53,6 @@ export const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <button className="text-xs font-medium text-text-tertiary hover:text-text-primary uppercase tracking-widest transition-colors">
-              ES
-            </button>
             <Button 
               variant="primary" 
               icon={false} 

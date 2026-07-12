@@ -27,28 +27,18 @@ export const Footer = () => {
               <Link href="/automatizacion" className="text-text-secondary hover:text-accent transition-colors text-sm">
                 Automatización & IA
               </Link>
-              <Link href="/desarrollo-web" className="text-text-secondary hover:text-accent transition-colors text-sm">
-                Desarrollo Web
-              </Link>
-              <Link href="/seo" className="text-text-secondary hover:text-accent transition-colors text-sm">
-                Posicionamiento SEO
-              </Link>
             </div>
           </div>
 
           <div className="flex flex-col gap-6">
-            <h4 className="text-text-primary font-medium">Redes</h4>
+            <h4 className="text-text-primary font-medium">Contacto</h4>
             <div className="flex flex-col gap-4">
-              <a href="#" className="group inline-flex items-center gap-1 text-text-secondary hover:text-accent transition-colors text-sm">
+              <a href="https://www.instagram.com/nevoxagency/" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-1 text-text-secondary hover:text-accent transition-colors text-sm">
                 Instagram
                 <ArrowUpRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
-              <a href="#" className="group inline-flex items-center gap-1 text-text-secondary hover:text-accent transition-colors text-sm">
-                LinkedIn
-                <ArrowUpRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-              <a href="#" className="group inline-flex items-center gap-1 text-text-secondary hover:text-accent transition-colors text-sm">
-                Twitter / X
+              <a href="mailto:hola@nevox.pro" className="group inline-flex items-center gap-1 text-text-secondary hover:text-accent transition-colors text-sm">
+                Email
                 <ArrowUpRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>

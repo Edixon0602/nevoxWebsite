@@ -1,3 +1,5 @@
+"use client";
+
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
@@ -29,14 +31,19 @@ export default function Automatizacion() {
               Reemplaza las tareas repetitivas por infraestructura inteligente. Conectamos tus herramientas, automatizamos procesos e implementamos IA para que tu equipo se enfoque en lo que importa.
             </p>
             <div className="flex items-center gap-4">
-              <Button className="py-4 px-8">Explorar automatización</Button>
+              <Button 
+                className="py-4 px-8"
+                onClick={() => document.getElementById('soluciones')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Explorar automatización
+              </Button>
             </div>
           </div>
         </SectionWrapper>
 
         {/* Automation Services Grid */}
         <SectionWrapper size="default" className="bg-surface/30">
-          <div className="flex flex-col mb-16">
+          <div id="soluciones" className="flex flex-col mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-text-primary max-w-2xl">
               Nuestras Soluciones Tecnológicas
             </h2>
