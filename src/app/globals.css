@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0a;
+  --color-surface: #141414;
+  --color-surface-elevated: #1a1a1a;
+  
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
+  
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a1a1a1;
+  --color-text-tertiary: #666666;
+  
+  --color-accent: #00e5a0;
+  --color-accent-muted: rgba(0, 229, 160, 0.15);
+  --color-accent-hover: #00cc8e;
+  
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    @apply bg-bg text-text-primary font-sans;
+    background-color: var(--color-bg);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+
+  /* Utility classes from High-End-Visual-Design skill */
+  .double-bezel {
+    @apply bg-white/5 ring-1 ring-white/5 p-1.5 rounded-[2rem];
+  }
+  
+  .double-bezel-inner {
+    @apply bg-surface shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] rounded-[calc(2rem-0.375rem)];
+  }
+}

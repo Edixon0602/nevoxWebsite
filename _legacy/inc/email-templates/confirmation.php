@@ -1,0 +1,265 @@
+<?php
+/**
+ * Plantilla HTML para el correo de confirmación de solicitud de demo.
+ * 
+ * Variables esperadas:
+ * - $name (string): Nombre del usuario
+ * 
+ * Uso: include este archivo después de definir $name,
+ *      luego capture $emailBody con ob_start()/ob_get_clean().
+ */
+
+if (!isset($name)) {
+  $name = 'Cliente';
+}
+?>
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Solicitud Recibida — Nevox</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    /* Reset */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; }
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap');
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f0f0f5; font-family: 'Inter', Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased;">
+
+  <!-- Outer wrapper -->
+  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f0f0f5;">
+    <tr>
+      <td align="center" style="padding: 40px 16px;">
+
+        <!-- Main card -->
+        <table role="presentation" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 40px rgba(26, 28, 28, 0.08);">
+
+          <!-- Header gradient bar -->
+          <tr>
+            <td style="background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%); height: 6px; font-size: 0; line-height: 0;">&nbsp;</td>
+          </tr>
+
+          <!-- Logo area -->
+          <tr>
+            <td align="center" style="padding: 36px 40px 24px;">
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center" style="font-family: 'Manrope', Arial, sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.04em; color: #1a1c1c;">
+                    <span style="color: #3b82f6;">⬡</span>&nbsp;Nevox
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr>
+            <td style="padding: 0 40px;">
+              <div style="height: 1px; background-color: rgba(195, 198, 215, 0.4);"></div>
+            </td>
+          </tr>
+
+          <!-- Success icon -->
+          <tr>
+            <td align="center" style="padding: 40px 40px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center" valign="middle" width="80" height="80" style="width: 80px; height: 80px; background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%); border-radius: 50%; text-align: center; vertical-align: middle;">
+                    <span style="font-size: 36px; color: #ffffff; line-height: 80px;">✓</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Heading -->
+          <tr>
+            <td align="center" style="padding: 0 40px 8px;">
+              <h1 style="margin: 0; font-family: 'Manrope', Arial, sans-serif; font-size: 26px; font-weight: 800; letter-spacing: -0.04em; color: #1a1c1c; line-height: 1.2;">
+                ¡Solicitud <span style="color: #3b82f6;">recibida</span>!
+              </h1>
+            </td>
+          </tr>
+
+          <!-- Greeting & body -->
+          <tr>
+            <td align="center" style="padding: 12px 40px 32px;">
+              <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #434655;">
+                Hola <strong style="color: #1a1c1c;"><?php echo htmlspecialchars($name); ?></strong>, gracias por confiar en Nevox. Hemos recibido tu solicitud de demo y nuestro equipo se pondrá en contacto contigo muy pronto.
+              </p>
+            </td>
+          </tr>
+
+          <!-- "¿Qué sigue?" card -->
+          <tr>
+            <td style="padding: 0 40px 36px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f3f3f3; border-radius: 12px; overflow: hidden;">
+                <!-- Card title -->
+                <tr>
+                  <td style="padding: 24px 28px 16px;">
+                    <p style="margin: 0; font-family: 'Manrope', Arial, sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #3b82f6;">
+                      ¿Qué sigue?
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Step 1 -->
+                <tr>
+                  <td style="padding: 0 28px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td valign="top" width="40" style="padding-right: 14px; padding-bottom: 16px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td align="center" valign="middle" width="32" height="32" style="width: 32px; height: 32px; background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%); border-radius: 50%; font-family: 'Manrope', Arial, sans-serif; font-size: 13px; font-weight: 800; color: #ffffff; text-align: center; line-height: 32px;">
+                                1
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td valign="top" style="padding-bottom: 16px;">
+                          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #434655;">
+                            <strong style="color: #1a1c1c;">Revisamos tu solicitud</strong> — analizamos tu negocio para preparar una propuesta personalizada.
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- Divider -->
+                <tr>
+                  <td style="padding: 0 28px;">
+                    <div style="height: 1px; background-color: rgba(195, 198, 215, 0.4);"></div>
+                  </td>
+                </tr>
+
+                <!-- Step 2 -->
+                <tr>
+                  <td style="padding: 0 28px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="padding-top: 16px;">
+                      <tr>
+                        <td valign="top" width="40" style="padding-right: 14px; padding-bottom: 16px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td align="center" valign="middle" width="32" height="32" style="width: 32px; height: 32px; background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%); border-radius: 50%; font-family: 'Manrope', Arial, sans-serif; font-size: 13px; font-weight: 800; color: #ffffff; text-align: center; line-height: 32px;">
+                                2
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td valign="top" style="padding-bottom: 16px;">
+                          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #434655;">
+                            <strong style="color: #1a1c1c;">Te contactamos</strong> — en menos de 24 horas uno de nuestros especialistas se comunicará contigo.
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- Divider -->
+                <tr>
+                  <td style="padding: 0 28px;">
+                    <div style="height: 1px; background-color: rgba(195, 198, 215, 0.4);"></div>
+                  </td>
+                </tr>
+
+                <!-- Step 3 -->
+                <tr>
+                  <td style="padding: 0 28px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="padding-top: 16px;">
+                      <tr>
+                        <td valign="top" width="40" style="padding-right: 14px; padding-bottom: 24px;">
+                          <table role="presentation" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td align="center" valign="middle" width="32" height="32" style="width: 32px; height: 32px; background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%); border-radius: 50%; font-family: 'Manrope', Arial, sans-serif; font-size: 13px; font-weight: 800; color: #ffffff; text-align: center; line-height: 32px;">
+                                3
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td valign="top" style="padding-bottom: 24px;">
+                          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #434655;">
+                            <strong style="color: #1a1c1c;">Demo en vivo</strong> — te mostramos exactamente cómo la automatización puede transformar tu negocio.
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- CTA Button — WhatsApp -->
+          <tr>
+            <td align="center" style="padding: 0 40px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center" style="background: #10b981; border-radius: 8px;">
+                    <a href="https://wa.me/584220990563" target="_blank" style="display: inline-block; padding: 14px 36px; font-family: 'Inter', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #ffffff; text-decoration: none; border-radius: 8px;">
+                      💬&nbsp;&nbsp;Escríbenos por WhatsApp
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Secondary link -->
+          <tr>
+            <td align="center" style="padding: 0 40px 40px;">
+              <p style="margin: 0; font-size: 13px; color: #434655;">
+                O visita nuestra web: <a href="https://nevox.pro" style="color: #3b82f6; font-weight: 600; text-decoration: underline;">nevox.pro</a>
+              </p>
+            </td>
+          </tr>
+
+          <!-- Bottom gradient bar -->
+          <tr>
+            <td style="background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%); height: 4px; font-size: 0; line-height: 0;">&nbsp;</td>
+          </tr>
+        </table>
+        <!-- /Main card -->
+
+        <!-- Footer -->
+        <table role="presentation" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px; width: 100%;">
+          <tr>
+            <td align="center" style="padding: 28px 40px 16px;">
+              <p style="margin: 0; font-size: 12px; color: #9a9aaa; line-height: 1.6;">
+                Nevox · Automatización Inteligente<br>
+                Este correo fue enviado porque solicitaste una demo en <a href="https://nevox.pro" style="color: #3b82f6; text-decoration: none;">nevox.pro</a>.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding: 0 40px 40px;">
+              <p style="margin: 0; font-size: 11px; color: #b0b0be;">
+                © <?php echo date('Y'); ?> Nevox. Todos los derechos reservados.
+              </p>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

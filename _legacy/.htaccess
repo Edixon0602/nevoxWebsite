@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Si la URL no tiene extensión y existe un archivo .php con ese nombre, lo sirve
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*?)/?$ $1.php [L]
+
+# Si la URL no tiene extensión y existe un archivo .html con ese nombre, lo sirve
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*?)/?$ $1.html [L]

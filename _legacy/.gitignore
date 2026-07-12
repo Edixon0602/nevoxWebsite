@@ -1,0 +1,13 @@
+# Dependencias
+/vendor/
+
+# Variables de entorno
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
