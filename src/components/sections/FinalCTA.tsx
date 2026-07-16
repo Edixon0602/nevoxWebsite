@@ -4,7 +4,22 @@ import * as React from "react";
 import { SectionWrapper } from "../ui/SectionWrapper";
 import { Button } from "../ui/Button";
 
-export const FinalCTA = () => {
+const CONTENT = {
+  es: {
+    title: "¿Tienes 30 minutos? Nosotros respuestas.",
+    description: "Cuéntanos qué está pasando en tu negocio. Sin presentaciones de ventas. Solo una conversación honesta sobre si podemos ayudarte.",
+    cta: "Reservar mi sesión gratuita"
+  },
+  en: {
+    title: "Got 30 minutes? We have answers.",
+    description: "Tell us what's happening in your business. No sales pitches. Just an honest conversation about whether we can help you.",
+    cta: "Book my free session"
+  }
+};
+
+export const FinalCTA = ({ lang = "es" }: { lang?: "es" | "en" }) => {
+  const t = CONTENT[lang];
+
   return (
     <SectionWrapper size="large" className="relative overflow-hidden">
       
@@ -18,11 +33,11 @@ export const FinalCTA = () => {
 
       <div className="relative z-10 flex flex-col items-center text-center w-full max-w-4xl mx-auto py-12">
         <h2 className="mb-8 font-display text-5xl md:text-7xl font-bold tracking-tighter text-text-primary text-balance leading-[1.1]">
-          No más tareas mecánicas.<br />No más leads perdidos.
+          {t.title}
         </h2>
         
         <p className="mb-12 max-w-xl text-lg text-text-secondary leading-relaxed text-balance mx-auto">
-          Agenda una sesión estratégica gratuita de 30 minutos. Analizaremos tus cuellos de botella y te mostraremos exactamente cómo automatizar tu crecimiento.
+          {t.description}
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
@@ -31,7 +46,7 @@ export const FinalCTA = () => {
             data-cal-link="serranonevox/descubrimiento"
             data-cal-config='{"layout":"month_view"}'
           >
-            Agendar sesión estratégica
+            {t.cta}
           </Button>
         </div>
       </div>

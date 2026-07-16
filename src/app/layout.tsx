@@ -16,7 +16,11 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Nevox | Agencia Digital & IA",
-  description: "Haz que tu negocio crezca mientras duermes con automatización, IA y marketing digital de alto nivel.",
+  description: "Nevox conecta marketing, automatización e IA para que no se te escape ninguna oportunidad, sin importar la hora.",
+  icons: {
+    icon: '/icon.png',
+    apple: '/icon.png',
+  },
   openGraph: {
     title: "Nevox | Agencia Digital & IA",
     description: "Marketing digital, automatización con IA e inteligencia de negocios. Todo integrado. Sin fricciones.",

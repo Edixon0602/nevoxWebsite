@@ -1,12 +1,37 @@
 import * as React from "react";
 import { SectionWrapper } from "../ui/SectionWrapper";
 
-export const Benefits = () => {
+const CONTENT = {
+  es: {
+    title: "Mientras tú te enfocas,",
+    titleHighlight: "el sistema trabaja.",
+    b1Title: "Tu equipo deja de hacer trabajo mecánico",
+    b1Desc: "Respondemos mensajes, actualizamos CRMs, calificamos leads. Todo lo que come tiempo sin agregar valor real.",
+    b2Title: "Ves lo que pasa en tiempo real",
+    b2Desc: "Un dashboard centralizado te dice de dónde vienen tus clientes y cuánto te cuesta cada uno.",
+    b3Title: "No pierdes clientes por demoras",
+    b3Desc: "El sistema responde en segundos, cualquier día, cualquier hora. El lead entra y el proceso arranca solo."
+  },
+  en: {
+    title: "While you focus,",
+    titleHighlight: "the system works.",
+    b1Title: "Your team stops doing mechanical work",
+    b1Desc: "We reply to messages, update CRMs, qualify leads. Everything that eats time without adding real value.",
+    b2Title: "See what happens in real time",
+    b2Desc: "A centralized dashboard tells you where your clients come from and how much each one costs.",
+    b3Title: "Stop losing clients to delays",
+    b3Desc: "The system replies in seconds, any day, any time. The lead comes in and the process starts automatically."
+  }
+};
+
+export const Benefits = ({ lang = "es" }: { lang?: "es" | "en" }) => {
+  const t = CONTENT[lang];
+
   return (
     <SectionWrapper size="large">
       <div className="flex flex-col items-center text-center mb-20 md:mb-32">
         <h2 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter text-text-primary text-balance max-w-4xl leading-[1.05]">
-          La diferencia entre sobrevivir y <span className="text-accent italic">dominar</span>.
+          {t.title} <span className="text-accent italic">{t.titleHighlight}</span>
         </h2>
       </div>
 
@@ -18,9 +43,9 @@ export const Benefits = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent" />
             <span className="font-display font-bold text-6xl text-white/10">01</span>
           </div>
-          <h3 className="font-display text-2xl font-bold text-text-primary">Recupera tu tiempo</h3>
+          <h3 className="font-display text-2xl font-bold text-text-primary">{t.b1Title}</h3>
           <p className="text-text-secondary leading-relaxed text-sm">
-            Las tareas mecánicas desaparecen de tu día a día. Tu equipo se concentra en estrategia y ventas de alto valor.
+            {t.b1Desc}
           </p>
         </div>
 
@@ -30,9 +55,9 @@ export const Benefits = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent" />
             <span className="font-display font-bold text-6xl text-white/10">02</span>
           </div>
-          <h3 className="font-display text-2xl font-bold text-text-primary">Visibilidad total</h3>
+          <h3 className="font-display text-2xl font-bold text-text-primary">{t.b2Title}</h3>
           <p className="text-text-secondary leading-relaxed text-sm">
-            Toma decisiones basadas en datos reales. Dashboards en vivo que muestran exactamente dónde está el dinero.
+            {t.b2Desc}
           </p>
         </div>
 
@@ -42,9 +67,9 @@ export const Benefits = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent" />
             <span className="font-display font-bold text-6xl text-white/10">03</span>
           </div>
-          <h3 className="font-display text-2xl font-bold text-text-primary">Ventas en automático</h3>
+          <h3 className="font-display text-2xl font-bold text-text-primary">{t.b3Title}</h3>
           <p className="text-text-secondary leading-relaxed text-sm">
-            Mientras duermes, tu sistema captura leads, los califica y agenda llamadas directamente en tu calendario.
+            {t.b3Desc}
           </p>
         </div>
 

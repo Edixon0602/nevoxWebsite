@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  // Fix Next.js blocking HMR dev resource from local IP
+  allowedDevOrigins: ['127.0.0.1', 'localhost', '0.0.0.0'],
+} as any;
 
 export default nextConfig;
