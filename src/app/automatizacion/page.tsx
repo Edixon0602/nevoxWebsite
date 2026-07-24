@@ -24,6 +24,9 @@ export default function Automatizacion() {
             <span className="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] bg-white/5 text-text-secondary ring-1 ring-white/10 w-fit">
               IA & Automatización
             </span>
+            <span className="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] bg-accent/10 text-accent ring-1 ring-accent/20 w-fit -mt-2">
+              Automatización con IA · Venezuela
+            </span>
             <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter text-text-primary leading-[1.1]">
               Tu negocio en piloto <span className="text-accent italic">automático</span>.
             </h1>
@@ -97,6 +100,19 @@ export default function Automatizacion() {
       </div>
 
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Automatización con IA Venezuela",
+            "provider": { "@type": "Organization", "name": "Nevox" },
+            "areaServed": "Venezuela",
+            "serviceType": "Automatización e Inteligencia Artificial"
+          })
+        }}
+      />
     </main>
   );
 }

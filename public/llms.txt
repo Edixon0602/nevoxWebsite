@@ -1,0 +1,13 @@
+# Nevox
+> Agencia digital en Venezuela especializada en marketing, automatización e IA.
+
+## Servicios
+- [Marketing & RRSS](https://nevox.pro/smma): Gestión de redes sociales, Meta Ads, SEO y creación de contenido.
+- [Automatización & IA](https://nevox.pro/automatizacion): Chatbots inteligentes, RPA, dashboards y consultoría tecnológica.
+
+## Blog
+- [Blog](https://nevox.pro/blog): Recursos de marketing digital, IA y automatización para negocios en Venezuela.
+
+## Contacto
+- Email: hola@nevox.pro
+- Founder: Edixon Serrano (linkedin.com/in/edixon-serrano)

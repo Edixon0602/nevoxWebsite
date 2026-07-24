@@ -14,11 +14,13 @@ const NAV_LINKS = {
     { href: "/", label: "Inicio" },
     { href: "/smma", label: "SMMA" },
     { href: "/automatizacion", label: "Automatización" },
+    { href: "/blog", label: "Blog" },
   ],
   en: [
     { href: "/en", label: "Home" },
     { href: "/en/smma", label: "SMMA" },
     { href: "/en/automatizacion", label: "Automation" },
+    { href: "/en/blog", label: "Blog" },
   ]
 };
 

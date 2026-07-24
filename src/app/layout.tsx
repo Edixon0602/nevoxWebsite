@@ -15,8 +15,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Nevox | Agencia Digital & IA",
-  description: "Nevox conecta marketing, automatización e IA para que no se te escape ninguna oportunidad, sin importar la hora.",
+  title: "Agencia de Marketing Digital en Venezuela | Nevox",
+  description: "Nevox es la agencia digital en Venezuela especializada en marketing, automatización e IA. Más clientes, menos caos operativo. Auditoría gratuita.",
   icons: {
     icon: '/icon.png',
     apple: '/icon.png',
@@ -70,6 +70,30 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-G6F5EYJX8T');`
+          }}
+        />
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Nevox",
+              "url": "https://nevox.pro",
+              "logo": "https://nevox.pro/icon.png",
+              "description": "Agencia digital especializada en marketing, automatización e inteligencia artificial para negocios en Venezuela y LATAM.",
+              "email": "hola@nevox.pro",
+              "founder": {
+                "@type": "Person",
+                "name": "Edixon Serrano"
+              },
+              "areaServed": ["Venezuela", "LATAM"],
+              "sameAs": [
+                "https://www.instagram.com/nevoxagency/",
+                "https://www.linkedin.com/in/edixon-serrano"
+              ]
+            })
           }}
         />
         <Script

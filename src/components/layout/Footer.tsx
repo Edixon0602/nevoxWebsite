@@ -16,6 +16,7 @@ const CONTENT = {
     links: {
       smma: "/smma",
       automation: "/automatizacion",
+      blog: "/blog",
       privacy: "/privacidad",
       terms: "/terminos"
     }
@@ -32,6 +33,7 @@ const CONTENT = {
     links: {
       smma: "/en/smma",
       automation: "/en/automatizacion",
+      blog: "/en/blog",
       privacy: "/en/privacidad",
       terms: "/en/terminos"
     }
@@ -62,6 +64,9 @@ export const Footer = ({ lang = "es" }: { lang?: "es" | "en" }) => {
               </Link>
               <Link href={t.links.automation} className="text-text-secondary hover:text-accent transition-colors text-sm">
                 Automatización & IA
+              </Link>
+              <Link href={t.links.blog} className="text-text-secondary hover:text-accent transition-colors text-sm">
+                Blog
               </Link>
             </div>
           </div>

@@ -4,6 +4,12 @@ import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { ShareNetwork, PresentationChart, Megaphone, Browsers } from "@phosphor-icons/react/dist/ssr";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gestión de Redes Sociales Venezuela — Marketing & Contenido | Nevox",
+  description: "Gestión profesional de redes sociales en Venezuela. Contenido estratégico, Meta Ads y embudos de conversión para negocios que quieren crecer.",
+};
 
 export default function SMMA() {
   return (
@@ -21,6 +27,9 @@ export default function SMMA() {
           <div className="relative z-10 flex flex-col gap-6 max-w-3xl">
             <span className="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] bg-white/5 text-text-secondary ring-1 ring-white/10 w-fit">
               Agencia de Marketing & Growth
+            </span>
+            <span className="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] bg-accent/10 text-accent ring-1 ring-accent/20 w-fit -mt-2">
+              Agencia de Marketing · Venezuela
             </span>
             <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter text-text-primary leading-[1.1]">
               Atrae, convence y <span className="text-accent italic">convierte</span>.
@@ -96,6 +105,19 @@ export default function SMMA() {
       </div>
 
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Gestión de Redes Sociales Venezuela",
+            "provider": { "@type": "Organization", "name": "Nevox" },
+            "areaServed": "Venezuela",
+            "serviceType": "Marketing Digital"
+          })
+        }}
+      />
     </main>
   );
 }
