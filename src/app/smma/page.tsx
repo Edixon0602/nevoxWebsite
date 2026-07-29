@@ -9,6 +9,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Gestión de Redes Sociales Venezuela — Marketing & Contenido | Nevox",
   description: "Gestión profesional de redes sociales en Venezuela. Contenido estratégico, Meta Ads y embudos de conversión para negocios que quieren crecer.",
+  alternates: {
+    canonical: '/smma',
+  },
 };
 
 export default function SMMA() {

@@ -15,6 +15,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nevox.pro"),
   title: "Agencia de Marketing Digital en Venezuela | Nevox",
   description: "Nevox es la agencia digital en Venezuela especializada en marketing, automatización e IA. Más clientes, menos caos operativo. Auditoría gratuita.",
   icons: {

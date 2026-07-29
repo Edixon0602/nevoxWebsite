@@ -8,6 +8,9 @@ import { getBlogPosts } from '@/lib/blog'
 export const metadata: Metadata = {
   title: 'Blog de Marketing Digital, IA y Automatización en Venezuela | Nevox',
   description: 'Recursos, guías y estrategias de marketing digital, inteligencia artificial y automatización para escalar tu negocio en Venezuela y LATAM.',
+  alternates: {
+    canonical: '/blog',
+  },
 }
 
 export default function BlogHub() {

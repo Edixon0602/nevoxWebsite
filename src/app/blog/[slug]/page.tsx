@@ -32,6 +32,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       modifiedTime: post.meta.lastUpdated,
       authors: ['Edixon Serrano'],
       images: post.meta.image ? [post.meta.image] : undefined,
+    },
+    alternates: {
+      canonical: `/blog/${resolvedParams.slug}`,
     }
   }
 }

@@ -10,6 +10,13 @@ import { CaseMetrics } from "@/components/sections/CaseMetrics";
 import { Verticals } from "@/components/sections/Verticals";
 import { FAQ } from "@/components/sections/FAQ";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
   return (
