@@ -52,20 +52,20 @@ export const Navbar = () => {
         transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
         className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4"
       >
-        <div className="flex items-center justify-between w-full max-w-4xl px-4 py-3 rounded-full bg-surface/80 backdrop-blur-xl ring-1 ring-white/10 shadow-2xl">
+        <div className="flex items-center justify-between w-full max-w-4xl px-4 py-2.5 rounded-2xl bg-surface/90 backdrop-blur-xl border border-white/10 shadow-2xl">
           <Link href={isEn ? "/en" : "/"} className="pl-2">
             <Logo />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1 bg-white/5 px-2 py-1.5 rounded-full">
+          <div className="hidden md:flex items-center gap-1 bg-white/[0.04] px-1.5 py-1 rounded-xl border border-white/5">
             {links.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
+                  className={`px-3.5 py-1.5 text-sm font-medium rounded-lg transition-colors ${
                     isActive
                       ? "bg-white/10 text-text-primary"
                       : "text-text-secondary hover:text-text-primary hover:bg-white/5"
@@ -80,7 +80,7 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center gap-3">
             <button
               onClick={handleLanguageSwitch}
-              className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-text-secondary hover:text-text-primary transition-colors uppercase tracking-widest rounded-full hover:bg-white/5"
+              className="flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-text-secondary hover:text-text-primary transition-colors uppercase tracking-widest rounded-lg hover:bg-white/5"
             >
               <Translate className="w-4 h-4" />
               {isEn ? 'ES' : 'EN'}
@@ -88,7 +88,7 @@ export const Navbar = () => {
             <Button 
               variant="primary" 
               icon={false} 
-              className="py-2.5 px-6 font-semibold"
+              className="py-2 px-5 text-xs font-semibold"
               data-cal-link="serranonevox/descubrimiento"
               data-cal-config='{"layout":"month_view"}'
             >
@@ -119,7 +119,7 @@ export const Navbar = () => {
             <div className="flex justify-between items-center mb-12">
               <button
                 onClick={handleLanguageSwitch}
-                className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-text-primary bg-white/5 rounded-full ring-1 ring-white/10"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-text-primary bg-white/5 rounded-xl border border-white/10"
               >
                 <Translate className="w-4 h-4" />
                 {isEn ? 'Ver en Español' : 'View in English'}

@@ -3,44 +3,44 @@ import { SectionWrapper } from "../ui/SectionWrapper";
 
 const CONTENT = {
   es: {
-    title: "Así trabajamos. Sin vueltas.",
-    subtitle: "Nos metemos en el negocio, encontramos los huecos y los cerramos. Nada de estrategias genéricas.",
+    title: "Metodología de implementación.",
+    subtitle: "Un proceso estructurado desde el análisis de arquitectura hasta el despliegue en producción.",
     steps: [
       {
         number: "01",
-        title: "Miramos lo que tienes",
-        desc: "En 30 minutos entendemos tu operación, tus herramientas y dónde se está yendo el dinero o el tiempo.",
+        title: "Diagnóstico y levantamiento técnico",
+        desc: "Analizamos tu stack tecnológico, bases de datos y flujos operativos para identificar cuellos de botella y oportunidades de automatización.",
       },
       {
         number: "02",
-        title: "Diseñamos lo que necesitas",
-        desc: "No templates. Construimos el sistema exacto para tu negocio: automatizaciones, embudos, agentes de IA.",
+        title: "Diseño y arquitectura",
+        desc: "Definimos la arquitectura del software, esquemas de bases de datos, flujos de n8n y contratos de API a la medida de tus requerimientos.",
       },
       {
         number: "03",
-        title: "Lo ponemos a correr",
-        desc: "Implementamos, conectamos tus herramientas y te entregamos algo que funciona. No un PDF con recomendaciones.",
+        title: "Desarrollo y despliegue",
+        desc: "Construimos, conectamos e implementamos en entornos de producción con pruebas exhaustivas y documentación técnica completa.",
       },
     ]
   },
   en: {
-    title: "How we work. No BS.",
-    subtitle: "We dive into your business, find the leaks, and close them. No generic strategies.",
+    title: "Implementation methodology.",
+    subtitle: "A structured workflow from architecture discovery to production deployment.",
     steps: [
       {
         number: "01",
-        title: "We look at what you have",
-        desc: "In 30 minutes, we understand your operation, your tools, and where time or money is bleeding.",
+        title: "Technical audit & discovery",
+        desc: "We inspect your technology stack, database schemas, and operational pipelines to identify automation bottlenecks.",
       },
       {
         number: "02",
-        title: "We design what you need",
-        desc: "No templates. We build the exact system for your business: automations, funnels, AI agents.",
+        title: "Architecture & system design",
+        desc: "We define software architecture, database models, n8n workflows, and API contracts tailored to your exact operational requirements.",
       },
       {
         number: "03",
-        title: "We make it run",
-        desc: "We implement, connect your tools, and hand you something that works. Not a PDF with recommendations.",
+        title: "Development & deployment",
+        desc: "We build, integrate, and deploy production systems with end-to-end testing and comprehensive technical documentation.",
       },
     ]
   }

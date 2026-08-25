@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: "Agency specializing in custom software development, process automation, and AI integrations for businesses.",
   openGraph: {
     title: "Nevox | Custom Software, Automation & AI",
-    description: "Custom software development, workflow automation, and AI integrations. Seamless digital infrastructure.",
+    description: "Custom software development, workflow automation, and AI integrations for scaling businesses.",
     url: "https://nevox.pro/en",
     siteName: "Nevox",
     locale: "en_US",

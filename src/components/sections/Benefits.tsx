@@ -3,24 +3,22 @@ import { SectionWrapper } from "../ui/SectionWrapper";
 
 const CONTENT = {
   es: {
-    title: "Mientras tú te enfocas,",
-    titleHighlight: "el sistema trabaja.",
-    b1Title: "Tu equipo deja de hacer trabajo mecánico",
-    b1Desc: "Respondemos mensajes, actualizamos CRMs, calificamos leads. Todo lo que come tiempo sin agregar valor real.",
-    b2Title: "Ves lo que pasa en tiempo real",
-    b2Desc: "Un dashboard centralizado te dice de dónde vienen tus clientes y cuánto te cuesta cada uno.",
-    b3Title: "No pierdes clientes por demoras",
-    b3Desc: "El sistema responde en segundos, cualquier día, cualquier hora. El lead entra y el proceso arranca solo."
+    title: "Resultados operativos directos.",
+    b1Title: "Eliminación de tareas manuales",
+    b1Desc: "Sincronización continua de inventarios, registros y órdenes entre CRM, bases de datos y herramientas internas sin errores de tipeo.",
+    b2Title: "Atención y captura continua",
+    b2Desc: "Agentes de IA capaces de responder consultas técnicas y comerciales, procesar datos y agendar reuniones las 24 horas del día.",
+    b3Title: "Visibilidad y control en tiempo real",
+    b3Desc: "Métricas operativas consolidadas en paneles visuales para evaluar rendimiento, costos y tiempos de respuesta de forma transparente."
   },
   en: {
-    title: "While you focus,",
-    titleHighlight: "the system works.",
-    b1Title: "Your team stops doing mechanical work",
-    b1Desc: "We reply to messages, update CRMs, qualify leads. Everything that eats time without adding real value.",
-    b2Title: "See what happens in real time",
-    b2Desc: "A centralized dashboard tells you where your clients come from and how much each one costs.",
-    b3Title: "Stop losing clients to delays",
-    b3Desc: "The system replies in seconds, any day, any time. The lead comes in and the process starts automatically."
+    title: "Direct operational impact.",
+    b1Title: "Manual task elimination",
+    b1Desc: "Continuous synchronization of inventory, records, and orders across CRM, databases, and internal tools without human error.",
+    b2Title: "Continuous intake & processing",
+    b2Desc: "AI agents capable of answering technical and commercial queries, processing data, and scheduling appointments 24/7.",
+    b3Title: "Real-time visibility & control",
+    b3Desc: "Consolidated operational telemetry in visual dashboards to track performance, costs, and response times transparently."
   }
 };
 
@@ -29,48 +27,45 @@ export const Benefits = ({ lang = "es" }: { lang?: "es" | "en" }) => {
 
   return (
     <SectionWrapper size="large">
-      <div className="flex flex-col items-center text-center mb-20 md:mb-32">
-        <h2 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter text-text-primary text-balance max-w-4xl leading-[1.05]">
-          {t.title} <span className="text-accent italic">{t.titleHighlight}</span>
+      <div className="flex flex-col mb-16 md:mb-20">
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary text-balance max-w-2xl">
+          {t.title}
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         
         {/* Benefit 1 */}
-        <div className="flex flex-col gap-6 items-center text-center px-4">
-          <div className="w-full aspect-[4/3] rounded-3xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center mb-4 overflow-hidden relative">
-            <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent" />
-            <span className="font-display font-bold text-6xl text-white/10">01</span>
+        <div className="flex flex-col justify-between p-8 rounded-2xl bg-white/[0.02] border border-white/10">
+          <div className="flex flex-col gap-4">
+            <span className="font-mono text-xs font-semibold text-accent tracking-wider">01</span>
+            <h3 className="font-display text-xl md:text-2xl font-bold text-text-primary">{t.b1Title}</h3>
+            <p className="text-text-secondary leading-relaxed text-sm">
+              {t.b1Desc}
+            </p>
           </div>
-          <h3 className="font-display text-2xl font-bold text-text-primary">{t.b1Title}</h3>
-          <p className="text-text-secondary leading-relaxed text-sm">
-            {t.b1Desc}
-          </p>
         </div>
 
         {/* Benefit 2 */}
-        <div className="flex flex-col gap-6 items-center text-center px-4 md:mt-16">
-          <div className="w-full aspect-[4/3] rounded-3xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center mb-4 overflow-hidden relative">
-            <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent" />
-            <span className="font-display font-bold text-6xl text-white/10">02</span>
+        <div className="flex flex-col justify-between p-8 rounded-2xl bg-white/[0.02] border border-white/10">
+          <div className="flex flex-col gap-4">
+            <span className="font-mono text-xs font-semibold text-accent tracking-wider">02</span>
+            <h3 className="font-display text-xl md:text-2xl font-bold text-text-primary">{t.b2Title}</h3>
+            <p className="text-text-secondary leading-relaxed text-sm">
+              {t.b2Desc}
+            </p>
           </div>
-          <h3 className="font-display text-2xl font-bold text-text-primary">{t.b2Title}</h3>
-          <p className="text-text-secondary leading-relaxed text-sm">
-            {t.b2Desc}
-          </p>
         </div>
 
         {/* Benefit 3 */}
-        <div className="flex flex-col gap-6 items-center text-center px-4 md:mt-32">
-          <div className="w-full aspect-[4/3] rounded-3xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center mb-4 overflow-hidden relative">
-            <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent" />
-            <span className="font-display font-bold text-6xl text-white/10">03</span>
+        <div className="flex flex-col justify-between p-8 rounded-2xl bg-white/[0.02] border border-white/10">
+          <div className="flex flex-col gap-4">
+            <span className="font-mono text-xs font-semibold text-accent tracking-wider">03</span>
+            <h3 className="font-display text-xl md:text-2xl font-bold text-text-primary">{t.b3Title}</h3>
+            <p className="text-text-secondary leading-relaxed text-sm">
+              {t.b3Desc}
+            </p>
           </div>
-          <h3 className="font-display text-2xl font-bold text-text-primary">{t.b3Title}</h3>
-          <p className="text-text-secondary leading-relaxed text-sm">
-            {t.b3Desc}
-          </p>
         </div>
 
       </div>

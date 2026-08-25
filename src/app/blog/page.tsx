@@ -6,8 +6,8 @@ import { BlogCard } from '@/components/sections/BlogCard'
 import { getBlogPosts } from '@/lib/blog'
 
 export const metadata: Metadata = {
-  title: 'Blog de Marketing Digital, IA y Automatización en Venezuela | Nevox',
-  description: 'Recursos, guías y estrategias de marketing digital, inteligencia artificial y automatización para escalar tu negocio en Venezuela y LATAM.',
+  title: 'Blog de Software, IA y Automatización en Venezuela | Nevox',
+  description: 'Guías técnicas, arquitecturas y estrategias de desarrollo de software, inteligencia artificial y automatización de procesos para empresas.',
   alternates: {
     canonical: '/blog',
   },
@@ -21,17 +21,17 @@ export default function BlogHub() {
       <Navbar />
       
       <div className="w-full flex flex-col gap-0 overflow-hidden">
-        <SectionWrapper size="hero" className="relative flex flex-col justify-center">
+        <SectionWrapper size="hero" className="relative flex flex-col justify-center pt-24">
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-start opacity-10">
             <div className="absolute w-[40vw] h-[40vw] rounded-full bg-accent/20 blur-[100px] mix-blend-screen" />
           </div>
           
           <div className="relative z-10 flex flex-col gap-6 max-w-4xl">
-            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter text-text-primary leading-[1.1]">
-              Recursos de marketing digital e <span className="text-accent italic">IA</span> para negocios en Venezuela
+            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight text-text-primary leading-[1.08]">
+              Desarrollo de software, automatización e <span className="text-accent">IA</span>.
             </h1>
             <p className="text-lg md:text-xl text-text-secondary leading-relaxed text-balance max-w-2xl">
-              Estrategias accionables, guías técnicas y las últimas tendencias en automatización y growth para escalar tu empresa.
+              Artículos técnicos, análisis de arquitectura y guías prácticas para optimizar operaciones empresariales con tecnología moderna.
             </p>
           </div>
         </SectionWrapper>

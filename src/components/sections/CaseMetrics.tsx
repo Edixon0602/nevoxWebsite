@@ -23,25 +23,25 @@ export const CaseMetrics = () => {
         </div>
 
         {/* Data Right */}
-        <div className="w-full lg:w-1/3 flex flex-col gap-8 shrink-0">
-          <div className="flex items-center gap-6 p-6 rounded-2xl bg-white/5 ring-1 ring-white/10">
+        <div className="w-full lg:w-1/3 flex flex-col gap-6 shrink-0">
+          <div className="flex items-center gap-6 p-6 rounded-xl bg-white/[0.03] border border-white/10">
             <div className="flex flex-col gap-1">
               <span className="text-4xl font-display font-bold text-accent">+300%</span>
-              <span className="text-sm font-medium text-text-secondary">Crecimiento en Leads</span>
+              <span className="text-sm font-medium text-text-secondary">Capacidad de procesamiento</span>
             </div>
           </div>
           
-          <div className="flex items-center gap-6 p-6 rounded-2xl bg-white/5 ring-1 ring-white/10">
+          <div className="flex items-center gap-6 p-6 rounded-xl bg-white/[0.03] border border-white/10">
             <div className="flex flex-col gap-1">
               <span className="text-4xl font-display font-bold text-text-primary">-45h</span>
-              <span className="text-sm font-medium text-text-secondary">Horas semanales ahorradas</span>
+              <span className="text-sm font-medium text-text-secondary">Horas semanales de trabajo manual</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-6 p-6 rounded-2xl bg-white/5 ring-1 ring-white/10">
+          <div className="flex items-center gap-6 p-6 rounded-xl bg-white/[0.03] border border-white/10">
             <div className="flex flex-col gap-1">
-              <span className="text-4xl font-display font-bold text-text-primary">100%</span>
-              <span className="text-sm font-medium text-text-secondary">Tasa de respuesta inmediata</span>
+              <span className="text-4xl font-display font-bold text-text-primary">&lt; 3s</span>
+              <span className="text-sm font-medium text-text-secondary">Tiempo de respuesta automatizada</span>
             </div>
           </div>
         </div>

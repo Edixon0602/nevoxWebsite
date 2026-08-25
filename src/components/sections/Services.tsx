@@ -6,38 +6,36 @@ import Link from "next/link";
 
 const CONTENT = {
   es: {
-    tag: "Nuestras Soluciones",
-    title: "Infraestructura tecnológica diseñada para escalar.",
+    title: "Servicios e infraestructura tecnológica.",
     software: {
-      title: "Desarrollo de Software & Web",
-      desc: "Creamos software a medida, plataformas SaaS, portales de clientes y aplicaciones web robustas con tecnologías modernas.",
-      list: ['Aplicaciones Web & SaaS a Medida', 'Portales de Clientes y Paneles Internos', 'Arquitecturas Escalables (Next.js / Cloud)', 'APIs & Microservicios'],
-      cta: "Conocer más sobre Software",
+      title: "Desarrollo de Software",
+      desc: "Construimos aplicaciones web, portales de clientes y arquitecturas cloud con Next.js, Node.js y TypeScript.",
+      list: ['Aplicaciones web y plataformas a medida', 'Portales de clientes y paneles internos', 'Arquitecturas cloud y microservicios', 'Diseño de APIs e integraciones seguras'],
+      cta: "Conocer más sobre software",
       href: "/automatizacion"
     },
     automation: {
-      title: "Automatización & Agentes IA",
-      desc: "Eliminamos el trabajo manual y la fricción operativa mediante flujos automatizados (n8n/Make) y agentes inteligentes conectados a tu negocio.",
-      list: ['Agentes de IA Conversacionales (FlowBot)', 'Automatización de Flujos (n8n / RPA)', 'Sincronización de CRM, ERP & Bases de Datos', 'Dashboards y Business Intelligence'],
-      cta: "Explorar Automatización & IA",
+      title: "Automatización & IA",
+      desc: "Conectamos herramientas existentes y desplegamos agentes de IA para procesar información y ejecutar acciones 24/7.",
+      list: ['Agentes conversacionales especializados (FlowBot)', 'Automatización de flujos de trabajo con n8n', 'Sincronización de bases de datos, CRM y ERP', 'Monitoreo de datos y tableros en tiempo real'],
+      cta: "Explorar automatización & IA",
       href: "/automatizacion"
     }
   },
   en: {
-    tag: "Our Solutions",
-    title: "Technology infrastructure engineered to scale.",
+    title: "Services & technology infrastructure.",
     software: {
-      title: "Custom Software & Web Development",
-      desc: "We build custom software, SaaS platforms, client portals, and resilient web applications using modern tech stacks.",
-      list: ['Custom Web Apps & SaaS Platforms', 'Client Portals & Internal Dashboards', 'Scalable Architectures (Next.js / Cloud)', 'APIs & Microservices'],
-      cta: "Learn more about Software",
+      title: "Software Engineering",
+      desc: "We build web applications, client portals, and cloud architectures with Next.js, Node.js, and TypeScript.",
+      list: ['Custom web apps and platforms', 'Client portals and internal dashboards', 'Cloud architectures and microservices', 'Secure API design and integrations'],
+      cta: "Learn more about software",
       href: "/en/automatizacion"
     },
     automation: {
-      title: "Process Automation & AI Agents",
-      desc: "We eliminate manual work and operational bottlenecks with end-to-end workflows (n8n/Make) and smart AI agents connected to your stack.",
-      list: ['Conversational AI Agents (FlowBot)', 'Workflow Automations (n8n / RPA)', 'CRM, ERP & Database Integrations', 'Real-time BI & Dashboards'],
-      cta: "Explore Automation & AI",
+      title: "Automation & AI",
+      desc: "We connect existing toolchains and deploy AI agents to process data and execute operational tasks 24/7.",
+      list: ['Specialized conversational agents (FlowBot)', 'Workflow automation via n8n', 'Database, CRM, and ERP synchronization', 'Real-time telemetry and reporting'],
+      cta: "Explore automation & AI",
       href: "/en/automatizacion"
     }
   }
@@ -48,9 +46,8 @@ export const Services = ({ lang = "es" }: { lang?: "es" | "en" }) => {
 
   return (
     <SectionWrapper size="default">
-      <div id="servicios" className="flex flex-col mb-16 md:mb-24">
-        <span className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t.tag}</span>
-        <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-text-primary max-w-2xl text-balance">
+      <div id="servicios" className="flex flex-col mb-12 md:mb-16">
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary max-w-2xl text-balance">
           {t.title}
         </h2>
       </div>
@@ -58,56 +55,56 @@ export const Services = ({ lang = "es" }: { lang?: "es" | "en" }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
         
         {/* Software Development Vertical */}
-        <Card className="group h-full" innerClassName="flex flex-col h-full justify-between gap-12">
+        <Card className="group h-full" innerClassName="flex flex-col h-full justify-between gap-8 p-8 md:p-10">
           <div className="flex flex-col gap-6">
-            <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center ring-1 ring-white/10">
-              <Code weight="duotone" className="w-7 h-7 text-text-primary" />
+            <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
+              <Code weight="duotone" className="w-6 h-6 text-text-primary" />
             </div>
-            <div className="flex flex-col gap-4">
-              <h3 className="font-display text-3xl font-bold text-text-primary">{t.software.title}</h3>
-              <p className="text-text-secondary leading-relaxed max-w-sm">
+            <div className="flex flex-col gap-3">
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-text-primary">{t.software.title}</h3>
+              <p className="text-text-secondary leading-relaxed">
                 {t.software.desc}
               </p>
             </div>
-            <ul className="flex flex-col gap-3 mt-4">
+            <ul className="flex flex-col gap-2.5 mt-2">
               {t.software.list.map((item) => (
                 <li key={item} className="flex items-center gap-3 text-sm text-text-secondary">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent/50" />
+                  <span className="text-accent font-mono text-xs">-</span>
                   {item}
                 </li>
               ))}
             </ul>
           </div>
           
-          <Link href={t.software.href} className="inline-flex items-center gap-2 text-sm font-medium text-text-primary hover:text-accent transition-colors pt-4 border-t border-white/5">
+          <Link href={t.software.href} className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary hover:text-accent transition-colors pt-6 border-t border-white/5">
             {t.software.cta}
             <ArrowRight weight="bold" className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </Card>
 
         {/* Automation & AI Vertical */}
-        <Card className="group h-full" innerClassName="flex flex-col h-full justify-between gap-12">
+        <Card className="group h-full" innerClassName="flex flex-col h-full justify-between gap-8 p-8 md:p-10">
           <div className="flex flex-col gap-6">
-            <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center ring-1 ring-white/10">
-              <Robot weight="duotone" className="w-7 h-7 text-accent" />
+            <div className="w-12 h-12 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
+              <Robot weight="duotone" className="w-6 h-6 text-accent" />
             </div>
-            <div className="flex flex-col gap-4">
-              <h3 className="font-display text-3xl font-bold text-text-primary">{t.automation.title}</h3>
-              <p className="text-text-secondary leading-relaxed max-w-sm">
+            <div className="flex flex-col gap-3">
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-text-primary">{t.automation.title}</h3>
+              <p className="text-text-secondary leading-relaxed">
                 {t.automation.desc}
               </p>
             </div>
-            <ul className="flex flex-col gap-3 mt-4">
+            <ul className="flex flex-col gap-2.5 mt-2">
               {t.automation.list.map((item) => (
                 <li key={item} className="flex items-center gap-3 text-sm text-text-secondary">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent/50" />
+                  <span className="text-accent font-mono text-xs">-</span>
                   {item}
                 </li>
               ))}
             </ul>
           </div>
           
-          <Link href={t.automation.href} className="inline-flex items-center gap-2 text-sm font-medium text-text-primary hover:text-accent transition-colors pt-4 border-t border-white/5">
+          <Link href={t.automation.href} className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary hover:text-accent transition-colors pt-6 border-t border-white/5">
             {t.automation.cta}
             <ArrowRight weight="bold" className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>

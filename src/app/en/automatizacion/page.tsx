@@ -15,27 +15,24 @@ export default function Automatizacion_EN() {
       <div className="w-full flex flex-col gap-0 overflow-hidden">
         
         {/* IA Hero */}
-        <SectionWrapper size="hero" className="relative flex items-center">
+        <SectionWrapper size="hero" className="relative flex items-center pt-24">
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-end opacity-20">
             <div className="absolute w-[60vw] h-[60vw] rounded-full bg-accent/20 blur-[100px] mix-blend-screen" />
           </div>
           
           <div className="relative z-10 flex flex-col gap-6 max-w-4xl">
-            <span className="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] bg-white/5 text-text-secondary ring-1 ring-white/10 w-fit">
-              AI & Automation
-            </span>
-            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter text-text-primary leading-[1.1]">
-              Your business on <span className="text-accent italic">autopilot</span>.
+            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight text-text-primary leading-[1.08]">
+              Process automation and custom AI agents for businesses.
             </h1>
             <p className="text-lg md:text-xl text-text-secondary leading-relaxed text-balance max-w-2xl mb-4">
-              Replace repetitive tasks with intelligent infrastructure. We connect your tools, automate processes, and implement AI so your team can focus on what matters.
+              We eliminate repetitive manual work by connecting your existing tools, orchestrating workflows with n8n, and deploying AI models trained on your business data.
             </p>
             <div className="flex items-center gap-4">
               <Button 
-                className="py-4 px-8"
+                className="py-3.5 px-7"
                 onClick={() => document.getElementById('soluciones')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Explore Automation
+                Explore Solutions
               </Button>
             </div>
           </div>

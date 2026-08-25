@@ -3,20 +3,20 @@ import { SectionWrapper } from "../ui/SectionWrapper";
 
 const CONTENT = {
   es: {
-    title: "La mayoría de negocios pierden clientes sin darse cuenta.",
-    description: "Alguien llena un formulario a las 11 PM. Nadie responde hasta el lunes. Para entonces ya contrató a otro. Eso no es mala suerte, es una operación con huecos.",
-    pain1Title: "Siempre apagando incendios",
-    pain1Desc: "Cuando el equipo opera en modo reactivo, escalar es imposible. Cada nuevo cliente agrega caos en vez de caja.",
-    pain2Title: "Leads que se enfrían solos",
-    pain2Desc: "Sin un sistema que responda rápido y haga seguimiento, la mayoría de prospectos se pierden antes del primer contacto real."
+    title: "Los procesos manuales y los silos de datos limitan la capacidad de escalar.",
+    description: "Cuando la información vive aislada entre hojas de cálculo, correos y sistemas desarticulados, cada nuevo cliente aumenta la carga operativa en lugar del margen de beneficio.",
+    pain1Title: "Operaciones fragmentadas",
+    pain1Desc: "El equipo pierde horas trasladando datos manualmente entre herramientas incompatibles y corrigiendo errores de entrada.",
+    pain2Title: "Tiempos de respuesta lentos",
+    pain2Desc: "Las solicitudes de clientes e incidentes internos quedan en espera durante horas por falta de procesamiento y enrutamiento automatizado."
   },
   en: {
-    title: "Most businesses lose clients without even noticing.",
-    description: "Someone fills out a form at 11 PM. Nobody replies until Monday. By then, they've hired someone else. That's not bad luck, it's a leaky operation.",
-    pain1Title: "Always putting out fires",
-    pain1Desc: "When your team operates in reactive mode, scaling is impossible. Every new client adds chaos instead of cash flow.",
-    pain2Title: "Leads going cold",
-    pain2Desc: "Without a system that replies instantly and follows up, most prospects are lost before the first real contact."
+    title: "Manual processes and data silos constrain business growth.",
+    description: "When information is scattered across spreadsheets, inboxes, and disconnected systems, scaling adds operational overhead rather than profit margin.",
+    pain1Title: "Fragmented operations",
+    pain1Desc: "Teams spend hours manually moving data between incompatible tools and fixing entry errors.",
+    pain2Title: "Slow turnaround times",
+    pain2Desc: "Customer requests and operational tasks stall for hours due to a lack of automated processing and routing."
   }
 };
 

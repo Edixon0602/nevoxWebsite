@@ -5,7 +5,7 @@ import { SectionWrapper } from '@/components/ui/SectionWrapper'
 
 export const metadata: Metadata = {
   title: 'Blog | Nevox',
-  description: 'Digital marketing, AI, and automation resources.',
+  description: 'Software development, AI, and workflow automation resources.',
 }
 
 export default function BlogHubEN() {

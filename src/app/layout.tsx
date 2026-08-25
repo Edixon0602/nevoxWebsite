@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Nevox | Desarrollo de Software, Automatización & IA",
-    description: "Desarrollo de software a medida, automatización de procesos e integraciones de IA. Infraestructura digital sin fricciones.",
+    description: "Desarrollo de software a medida, automatización de procesos e integraciones de IA para empresas.",
     url: "https://nevox.pro",
     siteName: "Nevox",
     locale: "es_ES",

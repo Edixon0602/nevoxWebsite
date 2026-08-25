@@ -15,30 +15,24 @@ export default function Automatizacion() {
       <div className="w-full flex flex-col gap-0 overflow-hidden">
         
         {/* IA Hero */}
-        <SectionWrapper size="hero" className="relative flex items-center">
+        <SectionWrapper size="hero" className="relative flex items-center pt-24">
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-end opacity-20">
             <div className="absolute w-[60vw] h-[60vw] rounded-full bg-accent/20 blur-[100px] mix-blend-screen" />
           </div>
           
           <div className="relative z-10 flex flex-col gap-6 max-w-4xl">
-            <span className="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] bg-white/5 text-text-secondary ring-1 ring-white/10 w-fit">
-              IA & Automatización
-            </span>
-            <span className="rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] bg-accent/10 text-accent ring-1 ring-accent/20 w-fit -mt-2">
-              Automatización con IA · Venezuela
-            </span>
-            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter text-text-primary leading-[1.1]">
-              Tu negocio en piloto <span className="text-accent italic">automático</span>.
+            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight text-text-primary leading-[1.08]">
+              Automatización de procesos y agentes de IA para empresas.
             </h1>
             <p className="text-lg md:text-xl text-text-secondary leading-relaxed text-balance max-w-2xl mb-4">
-              Reemplaza las tareas repetitivas por infraestructura inteligente. Conectamos tus herramientas, automatizamos procesos e implementamos IA para que tu equipo se enfoque en lo que importa.
+              Reemplazamos tareas manuales repetitivas conectando tus herramientas existentes, integrando flujos con n8n y desplegando modelos de IA entrenados con los datos de tu negocio.
             </p>
             <div className="flex items-center gap-4">
               <Button 
-                className="py-4 px-8"
+                className="py-3.5 px-7"
                 onClick={() => document.getElementById('soluciones')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Explorar automatización
+                Explorar soluciones
               </Button>
             </div>
           </div>

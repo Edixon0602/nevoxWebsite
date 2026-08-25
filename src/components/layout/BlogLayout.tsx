@@ -29,7 +29,7 @@ export function BlogLayout({ children, frontMatter }: BlogLayoutProps) {
             <header className="flex flex-col gap-6 mb-12">
               <div className="flex gap-2 flex-wrap">
                 {frontMatter.tags.map(tag => (
-                  <span key={tag} className="text-xs font-semibold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full">
+                  <span key={tag} className="text-xs font-mono font-medium text-accent bg-accent/[0.08] border border-accent/20 px-2.5 py-1 rounded-md">
                     {tag}
                   </span>
                 ))}

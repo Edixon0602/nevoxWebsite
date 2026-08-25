@@ -48,7 +48,7 @@ export default function AuthorPage() {
                   Con años de experiencia en el ecosistema digital y tecnológico, mi objetivo principal es ayudar a las empresas en Venezuela y LATAM a escalar operaciones desarrollando software moderno, integrando plataformas y automatizando procesos con inteligencia artificial.
                 </p>
                 <p>
-                  En Nevox, diseño e implemento arquitecturas de software a medida, pipelines de automatización operativa y agentes de inteligencia artificial que permiten a los negocios operar de manera más eficiente, reducir errores y escalar sin fricción.
+                  En Nevox, diseño e implemento arquitecturas de software a medida, pipelines de automatización operativa y agentes de inteligencia artificial que permiten a los negocios operar de manera más eficiente, reducir errores y aumentar su capacidad de ejecución.
                 </p>
                 <p>
                   Mi filosofía es simple: la tecnología no debe ser complicada, debe ser rentable. Cada herramienta que implementamos tiene un único propósito: generar más ingresos o ahorrar más tiempo.

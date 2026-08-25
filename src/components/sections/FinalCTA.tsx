@@ -6,14 +6,14 @@ import { Button } from "../ui/Button";
 
 const CONTENT = {
   es: {
-    title: "¿Tienes 30 minutos? Nosotros respuestas.",
-    description: "Cuéntanos qué está pasando en tu negocio. Sin presentaciones de ventas. Solo una conversación honesta sobre si podemos ayudarte.",
-    cta: "Reservar mi sesión gratuita"
+    title: "¿Listo para modernizar tu infraestructura?",
+    description: "Agenda una sesión técnica con nuestro equipo. Evaluamos tus sistemas actuales y trazamos una propuesta de desarrollo o automatización a medida.",
+    cta: "Agendar llamada de descubrimiento"
   },
   en: {
-    title: "Got 30 minutes? We have answers.",
-    description: "Tell us what's happening in your business. No sales pitches. Just an honest conversation about whether we can help you.",
-    cta: "Book my free session"
+    title: "Ready to upgrade your infrastructure?",
+    description: "Schedule a technical discovery session. We will evaluate your current stack and outline a clear implementation roadmap.",
+    cta: "Schedule discovery session"
   }
 };
 

@@ -32,7 +32,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       return (
         <button
           ref={ref}
-          className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium border border-border text-text-primary hover:bg-white/5 hover:border-border-hover transition-all active:scale-[0.98] ${className}`}
+          className={`inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium border border-white/10 bg-white/[0.03] text-text-primary hover:bg-white/[0.08] hover:border-white/20 transition-all active:scale-[0.98] ${className}`}
           {...props}
         >
           {children}
@@ -40,18 +40,16 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       );
     }
 
-    // Primary (Pill with trailing icon)
+    // Primary
     return (
       <button
         ref={ref}
-        className={`group inline-flex items-center justify-between rounded-full bg-accent text-bg px-1.5 py-1.5 pl-6 text-sm font-bold tracking-wide hover:bg-accent-hover transition-all active:scale-[0.98] ${className}`}
+        className={`group inline-flex items-center justify-center gap-2.5 rounded-xl bg-accent text-bg px-6 py-3 text-sm font-semibold tracking-tight hover:bg-accent-hover transition-all active:scale-[0.98] shadow-sm ${className}`}
         {...props}
       >
-        <span className="mr-4">{children}</span>
+        <span>{children}</span>
         {icon && (
-          <span className="flex items-center justify-center w-8 h-8 rounded-full bg-black/10 group-hover:bg-black/20 transition-colors">
-            <ArrowRight weight="bold" className="w-4 h-4" />
-          </span>
+          <ArrowRight weight="bold" className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         )}
       </button>
     );
