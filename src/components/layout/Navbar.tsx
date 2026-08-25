@@ -12,14 +12,12 @@ import { Logo } from "../ui/Logo";
 const NAV_LINKS = {
   es: [
     { href: "/", label: "Inicio" },
-    { href: "/smma", label: "SMMA" },
-    { href: "/automatizacion", label: "Automatización" },
+    { href: "/automatizacion", label: "Automatización & IA" },
     { href: "/blog", label: "Blog" },
   ],
   en: [
     { href: "/en", label: "Home" },
-    { href: "/en/smma", label: "SMMA" },
-    { href: "/en/automatizacion", label: "Automation" },
+    { href: "/en/automatizacion", label: "Automation & AI" },
     { href: "/en/blog", label: "Blog" },
   ]
 };

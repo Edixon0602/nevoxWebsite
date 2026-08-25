@@ -6,7 +6,7 @@ import { AuthorBio } from '@/components/layout/AuthorBio'
 
 export const metadata: Metadata = {
   title: 'Edixon Serrano — Founder & CEO | Nevox',
-  description: 'Conoce más sobre Edixon Serrano, especialista en marketing, automatización e IA en Venezuela y fundador de Nevox.',
+  description: 'Conoce más sobre Edixon Serrano, especialista en desarrollo de software, automatización e IA en Venezuela y fundador de Nevox.',
 }
 
 export default function AuthorPage() {
@@ -45,10 +45,10 @@ export default function AuthorPage() {
               
               <div className="mt-12 space-y-6 text-text-secondary leading-relaxed">
                 <p>
-                  Con años de experiencia en el ecosistema digital, mi objetivo principal es ayudar a las empresas en Venezuela y LATAM a escalar operaciones integrando tecnología avanzada con estrategias de marketing probadas.
+                  Con años de experiencia en el ecosistema digital y tecnológico, mi objetivo principal es ayudar a las empresas en Venezuela y LATAM a escalar operaciones desarrollando software moderno, integrando plataformas y automatizando procesos con inteligencia artificial.
                 </p>
                 <p>
-                  En Nevox, diseño e implemento sistemas de captación de clientes, embudos automatizados de ventas y agentes de inteligencia artificial que permiten a los negocios operar de manera más eficiente y sin depender 100% de la intervención humana.
+                  En Nevox, diseño e implemento arquitecturas de software a medida, pipelines de automatización operativa y agentes de inteligencia artificial que permiten a los negocios operar de manera más eficiente, reducir errores y escalar sin fricción.
                 </p>
                 <p>
                   Mi filosofía es simple: la tecnología no debe ser complicada, debe ser rentable. Cada herramienta que implementamos tiene un único propósito: generar más ingresos o ahorrar más tiempo.

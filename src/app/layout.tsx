@@ -16,15 +16,15 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nevox.pro"),
-  title: "Agencia de Marketing Digital en Venezuela | Nevox",
-  description: "Nevox es la agencia digital en Venezuela especializada en marketing, automatización e IA. Más clientes, menos caos operativo. Auditoría gratuita.",
+  title: "Nevox | Desarrollo de Software, Automatización & IA",
+  description: "Nevox es la agencia especializada en desarrollo de software a medida, automatización de procesos e integraciones de Inteligencia Artificial para empresas.",
   icons: {
     icon: '/icon.png',
     apple: '/icon.png',
   },
   openGraph: {
-    title: "Nevox | Agencia Digital & IA",
-    description: "Marketing digital, automatización con IA e inteligencia de negocios. Todo integrado. Sin fricciones.",
+    title: "Nevox | Desarrollo de Software, Automatización & IA",
+    description: "Desarrollo de software a medida, automatización de procesos e integraciones de IA. Infraestructura digital sin fricciones.",
     url: "https://nevox.pro",
     siteName: "Nevox",
     locale: "es_ES",
@@ -83,7 +83,7 @@ export default function RootLayout({
               "name": "Nevox",
               "url": "https://nevox.pro",
               "logo": "https://nevox.pro/icon.png",
-              "description": "Agencia digital especializada en marketing, automatización e inteligencia artificial para negocios en Venezuela y LATAM.",
+              "description": "Agencia especializada en desarrollo de software, automatización de procesos e integraciones de inteligencia artificial para empresas en Venezuela y LATAM.",
               "email": "hola@nevox.pro",
               "founder": {
                 "@type": "Person",

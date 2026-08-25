@@ -10,11 +10,11 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Nevox | Digital Agency & AI",
-  description: "Make your business grow while you sleep with automation, AI, and high-level digital marketing.",
+  title: "Nevox | Custom Software, Automation & AI",
+  description: "Agency specializing in custom software development, process automation, and AI integrations for businesses.",
   openGraph: {
-    title: "Nevox | Digital Agency & AI",
-    description: "Digital marketing, AI automation, and business intelligence. Fully integrated. Zero friction.",
+    title: "Nevox | Custom Software, Automation & AI",
+    description: "Custom software development, workflow automation, and AI integrations. Seamless digital infrastructure.",
     url: "https://nevox.pro/en",
     siteName: "Nevox",
     locale: "en_US",

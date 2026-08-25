@@ -4,6 +4,20 @@ const nextConfig: NextConfig = {
   // Fix Next.js blocking HMR dev resource from local IP
   allowedDevOrigins: ['127.0.0.1', 'localhost', '0.0.0.0'],
   trailingSlash: false,
+  async redirects() {
+    return [
+      {
+        source: '/smma',
+        destination: '/automatizacion',
+        permanent: true,
+      },
+      {
+        source: '/en/smma',
+        destination: '/en/automatizacion',
+        permanent: true,
+      },
+    ];
+  },
 } as any;
 
 export default nextConfig;

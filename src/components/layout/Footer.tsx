@@ -5,8 +5,10 @@ import { Logo } from "../ui/Logo";
 
 const CONTENT = {
   es: {
-    desc: "Agencia digital especializada en hacer crecer tu negocio mientras duermes mediante automatización, IA y marketing de alto rendimiento.",
+    desc: "Agencia tecnológica especializada en desarrollo de software a medida, automatización de procesos e integraciones de Inteligencia Artificial.",
     services: "Servicios",
+    softwareService: "Desarrollo de Software",
+    automationService: "Automatización & IA",
     contact: "Contacto",
     legal: "Legal",
     privacy: "Política de Privacidad",
@@ -14,7 +16,7 @@ const CONTENT = {
     rights: "Todos los derechos reservados.",
     based: "Basados en LATAM, trabajando globalmente.",
     links: {
-      smma: "/smma",
+      software: "/#servicios",
       automation: "/automatizacion",
       blog: "/blog",
       privacy: "/privacidad",
@@ -22,8 +24,10 @@ const CONTENT = {
     }
   },
   en: {
-    desc: "Digital agency specializing in growing your business while you sleep through automation, AI, and high-performance marketing.",
+    desc: "Technology agency specializing in custom software development, business process automation, and AI integrations.",
     services: "Services",
+    softwareService: "Software Development",
+    automationService: "Automation & AI",
     contact: "Contact",
     legal: "Legal",
     privacy: "Privacy Policy",
@@ -31,7 +35,7 @@ const CONTENT = {
     rights: "All rights reserved.",
     based: "Based in LATAM, working globally.",
     links: {
-      smma: "/en/smma",
+      software: "/en#servicios",
       automation: "/en/automatizacion",
       blog: "/en/blog",
       privacy: "/en/privacidad",
@@ -59,11 +63,11 @@ export const Footer = ({ lang = "es" }: { lang?: "es" | "en" }) => {
           <div className="flex flex-col gap-6">
             <h4 className="text-text-primary font-medium">{t.services}</h4>
             <div className="flex flex-col gap-4">
-              <Link href={t.links.smma} className="text-text-secondary hover:text-accent transition-colors text-sm">
-                Marketing & RRSS
+              <Link href={t.links.software} className="text-text-secondary hover:text-accent transition-colors text-sm">
+                {t.softwareService}
               </Link>
               <Link href={t.links.automation} className="text-text-secondary hover:text-accent transition-colors text-sm">
-                Automatización & IA
+                {t.automationService}
               </Link>
               <Link href={t.links.blog} className="text-text-secondary hover:text-accent transition-colors text-sm">
                 Blog

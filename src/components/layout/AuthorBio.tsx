@@ -23,7 +23,7 @@ export function AuthorBio() {
           <p className="text-accent text-sm font-medium">Founder & CEO de Nevox</p>
         </div>
         <p className="text-text-secondary text-sm leading-relaxed max-w-2xl">
-          Ayudo a empresas en Venezuela y LATAM a escalar mediante marketing estratégico, automatización de procesos e inteligencia artificial.
+          Ayudo a empresas en Venezuela y LATAM a escalar mediante desarrollo de software a medida, automatización de procesos e inteligencia artificial.
         </p>
         <div className="flex items-center gap-4 mt-2">
           <Link href="https://www.linkedin.com/in/edixon-serrano" target="_blank" rel="noopener noreferrer" className="text-text-tertiary hover:text-accent transition-colors">

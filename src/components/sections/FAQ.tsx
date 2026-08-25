@@ -7,20 +7,20 @@ import { motion, AnimatePresence } from "motion/react";
 
 const FAQS = [
   {
-    q: "¿En cuánto tiempo empezamos a ver resultados?",
-    a: "Depende del servicio. Las automatizaciones internas muestran ROI en 48 horas (tiempo ahorrado). Las campañas de marketing toman entre 15 a 30 días en calibrarse para ventas predecibles.",
+    q: "¿En cuánto tiempo se implementa una solución?",
+    a: "Las automatizaciones de procesos y agentes de IA muestran impacto y ahorro de tiempo desde la primera semana de despliegue. Los proyectos de desarrollo de software a medida se ejecutan en sprints ágiles con entregas funcionales y continuas.",
   },
   {
-    q: "¿Qué pasa si ya tengo un equipo de marketing?",
-    a: "Perfecto. Entramos como una capa tecnológica y estratégica. Tu equipo creativo hace lo suyo, nosotros nos encargamos de que la distribución y la automatización detrás de escena escalen sin romperse.",
+    q: "¿Qué tipo de software y plataformas desarrollan?",
+    a: "Construimos aplicaciones web modernas (Next.js, React, Node.js, TypeScript), plataformas SaaS, portales de autogestión para clientes, paneles administrativos a medida y arquitecturas cloud conectadas con APIs seguras.",
   },
   {
-    q: "¿Tengo que firmar contratos a largo plazo?",
-    a: "No. Trabajamos mes a mes con la confianza de que los resultados te mantendrán con nosotros. Si no generamos valor, no hay por qué forzar una relación a largo plazo.",
+    q: "¿Cómo se integran las automatizaciones con las herramientas que ya usamos?",
+    a: "Nos conectamos de forma no invasiva a tu stack actual (CRMs como HubSpot/Salesforce, ERPs, WhatsApp, bases de datos SQL/NoSQL, hojas de cálculo y pasarelas de pago) mediante webhooks, APIs y flujos estructurados con n8n.",
   },
   {
-    q: "¿Cómo funciona FlowBot?",
-    a: "Es un agente de IA entrenado exclusivamente con los datos de tu empresa. Responde como tú, conoce tu inventario, califica leads 24/7 y se conecta directo a tu CRM para agendar reuniones.",
+    q: "¿Cómo funciona un agente de IA como FlowBot?",
+    a: "Es un agente inteligente entrenado con la base de conocimientos y reglas de tu negocio. Puede responder preguntas técnicas o comerciales, consultar inventarios, procesar solicitudes y registrar datos en tiempo real las 24 horas del día.",
   },
 ];
 

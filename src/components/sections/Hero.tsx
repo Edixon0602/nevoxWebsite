@@ -6,20 +6,20 @@ import { SectionWrapper } from "../ui/SectionWrapper";
 
 const CONTENT = {
   es: {
-    tag: "Agencia Digital & IA",
-    title: "Tu próximo cliente ya te buscó.",
-    titleHighlight: "¿Estabas ahí?",
-    description: "Nevox conecta marketing, automatización e IA para que no se te escape ninguna oportunidad, sin importar la hora.",
-    primaryCTA: "Hablar con el equipo",
-    secondaryCTA: "Ver qué hacemos"
+    tag: "Software · Automatización · Inteligencia Artificial",
+    title: "Software e Inteligencia Artificial para operar",
+    titleHighlight: "sin fricción.",
+    description: "Diseñamos plataformas a medida, automatizamos flujos de trabajo operativos e integramos agentes de IA para que tu empresa multiplique su rentabilidad.",
+    primaryCTA: "Hablar con un especialista",
+    secondaryCTA: "Ver soluciones"
   },
   en: {
-    tag: "Digital & AI Agency",
-    title: "Your next client already looked for you.",
-    titleHighlight: "Were you there?",
-    description: "Nevox connects marketing, automation, and AI so you never miss an opportunity — no matter the hour.",
-    primaryCTA: "Talk to our team",
-    secondaryCTA: "See what we do"
+    tag: "Software · Automation · Artificial Intelligence",
+    title: "Custom software and AI engineered to operate",
+    titleHighlight: "frictionless.",
+    description: "We build bespoke software, automate complex business workflows, and deploy AI agents to scale your operations effortlessly.",
+    primaryCTA: "Talk to a specialist",
+    secondaryCTA: "Explore solutions"
   }
 };
 

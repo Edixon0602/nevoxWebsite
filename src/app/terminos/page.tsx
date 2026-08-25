@@ -24,21 +24,21 @@ export default function TerminosPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">1. Aceptación de los Términos</h2>
               <p>
-                Al acceder y utilizar el sitio web de Nevox y nuestros servicios de agencia (incluyendo SMMA y automatización con IA), aceptas estar sujeto a estos Términos y Condiciones. Si no estás de acuerdo con alguna parte de los términos, no podrás acceder a los servicios.
+                Al acceder y utilizar el sitio web de Nevox y nuestros servicios (incluyendo desarrollo de software, automatización de procesos e integraciones de IA), aceptas estar sujeto a estos Términos y Condiciones. Si no estás de acuerdo con alguna parte de los términos, no podrás acceder a los servicios.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">2. Descripción del Servicio</h2>
               <p>
-                Nevox ofrece servicios de consultoría, marketing digital, desarrollo de sistemas de adquisición y automatización de procesos mediante Inteligencia Artificial. Los entregables exactos, plazos y costos de cada proyecto se definen en un contrato de servicios o propuesta técnica independiente firmada por ambas partes.
+                Nevox ofrece servicios de desarrollo de software a medida, aplicaciones web, plataformas digitales, automatización de procesos de negocio (RPA) e integraciones de Inteligencia Artificial. Los entregables exactos, plazos y costos de cada proyecto se definen en un contrato de servicios o propuesta técnica independiente firmada por ambas partes.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">3. Propiedad Intelectual</h2>
               <p className="mb-4">
-                El diseño de sistemas, código de automatización, arquitecturas de IA y estrategias de marketing desarrolladas por Nevox son propiedad intelectual de la agencia hasta que se complete el pago total del proyecto, momento en el cual los derechos de uso se transfieren al cliente según lo estipulado en su contrato específico.
+                El diseño de sistemas, código fuente, componentes de automatización y arquitecturas de IA desarrolladas por Nevox son propiedad intelectual de la agencia hasta que se complete el pago total del proyecto, momento en el cual los derechos de uso o propiedad se transfieren al cliente según lo estipulado en su contrato específico.
               </p>
               <p>
                 Todo el contenido visual, código fuente original y branding propio de Nevox en este sitio web está protegido por derechos de autor y no puede ser reproducido sin autorización.
@@ -55,7 +55,7 @@ export default function TerminosPage() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">5. Limitación de Responsabilidad</h2>
               <p>
-                Nevox implementa sistemas tecnológicos y de marketing basados en las mejores prácticas de la industria. Sin embargo, no podemos garantizar resultados comerciales específicos (como un número exacto de ventas o leads), ya que estos dependen de múltiples factores externos al mercado. Nevox no será responsable de daños indirectos, incidentales o consecuentes derivados del uso de nuestros sistemas.
+                Nevox implementa arquitecturas de software y soluciones tecnológicas basadas en las mejores prácticas de la industria. Sin embargo, no podemos garantizar resultados comerciales específicos dependientes de factores externos. Nevox no será responsable de daños indirectos, incidentales o consecuentes derivados del uso de nuestros sistemas.
               </p>
             </section>
 

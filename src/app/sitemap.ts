@@ -8,15 +8,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages
   const routes = [
     '',
-    '/smma',
     '/automatizacion',
     '/en',
-    '/en/smma',
     '/en/automatizacion',
     '/privacidad',
     '/terminos',
-    '/en/privacy',
-    '/en/terms',
+    '/en/privacidad',
+    '/en/terminos',
     '/blog',
     '/en/blog',
     '/blog/autor/edixon-serrano'

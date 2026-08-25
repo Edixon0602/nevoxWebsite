@@ -62,3 +62,39 @@ next-env.d.ts
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Documents, PDFs & Proposals
+*.pdf
+/propuestas/
+Propuesta*
+
+# Temporary & debug files
+temp_*
+*.tmp
+*.temp
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Python & automation scripts artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+env/
+.env.local
+.env.*.local
+
+# Testing & Browser Automation
+/coverage
+.playwright/
+test-results/
+playwright-report/
+
+# Internal / client-specific agent skills
+.agents/skills/apv-motors/
+.agents/skills/premium-pdf/
