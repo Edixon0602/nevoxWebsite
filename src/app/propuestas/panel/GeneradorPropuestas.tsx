@@ -23,6 +23,7 @@ import {
 
 type BloqueForm = { titulo: string; descripcion: string };
 type FaseForm = { periodo: string; titulo: string; detalle: string };
+type PropuestaResumen = { slug: string; titulo: string };
 
 const inputClass =
   "w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-text-primary outline-none transition-colors placeholder:text-text-tertiary focus:border-accent/60";
@@ -35,12 +36,13 @@ function reemplazar<T>(lista: T[], index: number, valor: T): T[] {
 export function GeneradorPropuestas({
   propuestas,
 }: {
-  propuestas: Propuesta[];
+  propuestas: PropuestaResumen[];
 }) {
   const router = useRouter();
 
   const [titulo, setTitulo] = React.useState("");
   const [slug, setSlug] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const [cliente, setCliente] = React.useState("");
   const [proyecto, setProyecto] = React.useState("");
   const [resumen, setResumen] = React.useState("");
@@ -67,6 +69,7 @@ export function GeneradorPropuestas({
   function limpiar() {
     setTitulo("");
     setSlug("");
+    setPassword("");
     setCliente("");
     setProyecto("");
     setResumen("");
@@ -91,6 +94,7 @@ export function GeneradorPropuestas({
     const payload = {
       titulo,
       slug: slug || undefined,
+      password: password || undefined,
       cliente,
       proyecto,
       resumen,
@@ -234,6 +238,20 @@ export function GeneradorPropuestas({
                   value={validaHasta}
                   onChange={(e) => setValidaHasta(e.target.value)}
                 />
+              </label>
+              <label className="flex flex-col gap-2 md:col-span-2">
+                <span className={labelText}>
+                  Contraseña de acceso (para el cliente)
+                </span>
+                <input
+                  className={inputClass}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Déjalo vacío para usar la contraseña global"
+                />
+                <span className="text-xs text-text-tertiary">
+                  El cliente deberá ingresarla para poder ver la propuesta.
+                </span>
               </label>
               <label className="flex flex-col gap-2 md:col-span-2">
                 <span className={labelText}>Resumen</span>

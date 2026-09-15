@@ -3,6 +3,11 @@ import path from "path";
 import crypto from "crypto";
 import type { Aceptacion, Propuesta } from "./propuestas";
 import { slugify } from "./propuestas";
+import {
+  adminConfigurado,
+  leerAceptacionAdmin,
+  registrarAceptacionAdmin,
+} from "./admin.server";
 
 const PROPUESTAS_DIR = path.join(process.cwd(), "data", "propuestas");
 
@@ -53,16 +58,55 @@ export function guardarPropuesta(propuesta: Propuesta): Propuesta {
   return propuesta;
 }
 
-export function registrarAceptacion(
+export async function registrarAceptacion(
   slug: string,
   aceptacion: Aceptacion
-): Propuesta | null {
+): Promise<Propuesta | null> {
   const propuesta = obtenerPropuesta(slug);
   if (!propuesta) return null;
 
+  if (adminConfigurado()) {
+    await registrarAceptacionAdmin(propuesta, aceptacion);
+  } else {
+    propuesta.aceptacion = aceptacion;
+    propuesta.estado = "aceptada";
+    guardarPropuesta(propuesta);
+  }
+
   propuesta.aceptacion = aceptacion;
   propuesta.estado = "aceptada";
-  return guardarPropuesta(propuesta);
+  return propuesta;
+}
+
+async function conAceptacion(propuesta: Propuesta): Promise<Propuesta> {
+  if (!adminConfigurado()) return propuesta;
+
+  try {
+    const aceptacion = await leerAceptacionAdmin(propuesta.slug);
+    if (aceptacion) {
+      propuesta.aceptacion = aceptacion;
+      propuesta.estado = "aceptada";
+    }
+  } catch (error) {
+    console.error("No se pudo leer la aceptación desde el panel admin:", error);
+  }
+
+  return propuesta;
+}
+
+export async function obtenerPropuestaConAceptacion(
+  slug: string
+): Promise<Propuesta | null> {
+  const propuesta = obtenerPropuesta(slug);
+  if (!propuesta) return null;
+  return conAceptacion(propuesta);
+}
+
+export async function listarPropuestasConAceptacion(): Promise<Propuesta[]> {
+  const propuestas = listarPropuestas();
+  if (!adminConfigurado()) return propuestas;
+
+  return Promise.all(propuestas.map((propuesta) => conAceptacion(propuesta)));
 }
 
 export function slugUnico(texto: string): string {
@@ -102,4 +146,61 @@ function tokensIguales(a: string, b: string): boolean {
   const bufferB = Buffer.from(b);
   if (bufferA.length !== bufferB.length) return false;
   return crypto.timingSafeEqual(bufferA, bufferB);
+}
+
+const ACCESO_SALT = "nevox-propuesta-acceso";
+
+export function hashPasswordPropuesta(password: string): string {
+  return crypto
+    .createHash("sha256")
+    .update(`${ACCESO_SALT}:${password}`)
+    .digest("hex");
+}
+
+function hashEsperado(propuesta: Propuesta): string | null {
+  if (propuesta.passwordHash) return propuesta.passwordHash;
+  const global = process.env.PROPUESTAS_VIEW_PASSWORD;
+  if (global) return hashPasswordPropuesta(global);
+  return null;
+}
+
+export function propuestaProtegida(propuesta: Propuesta): boolean {
+  return hashEsperado(propuesta) !== null;
+}
+
+export function passwordPropuestaValida(
+  propuesta: Propuesta,
+  password: unknown
+): boolean {
+  if (typeof password !== "string" || password.length === 0) return false;
+  const esperado = hashEsperado(propuesta);
+  if (!esperado) return true;
+  return tokensIguales(hashPasswordPropuesta(password), esperado);
+}
+
+export function cookieAccesoNombre(slug: string): string {
+  return `nevox_prop_${slug}`;
+}
+
+function tokenAcceso(propuesta: Propuesta): string | null {
+  const esperado = hashEsperado(propuesta);
+  if (!esperado) return null;
+  return crypto
+    .createHash("sha256")
+    .update(`acceso:${propuesta.slug}:${esperado}`)
+    .digest("hex");
+}
+
+export function tokenAccesoPropuesta(propuesta: Propuesta): string | null {
+  return tokenAcceso(propuesta);
+}
+
+export function accesoPropuestaValido(
+  propuesta: Propuesta,
+  token?: string
+): boolean {
+  const esperado = tokenAcceso(propuesta);
+  if (!esperado) return true;
+  if (!token) return false;
+  return tokensIguales(token, esperado);
 }

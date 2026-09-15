@@ -3,7 +3,7 @@ import { PanelLogin } from "./PanelLogin";
 import { GeneradorPropuestas } from "./GeneradorPropuestas";
 import {
   PANEL_COOKIE,
-  listarPropuestas,
+  listarPropuestasConAceptacion,
   tokenPanelValido,
 } from "@/lib/propuestas.server";
 
@@ -17,5 +17,11 @@ export default async function PanelPage() {
     return <PanelLogin />;
   }
 
-  return <GeneradorPropuestas propuestas={listarPropuestas()} />;
+  const propuestas = await listarPropuestasConAceptacion();
+
+  return (
+    <GeneradorPropuestas
+      propuestas={propuestas.map((p) => ({ slug: p.slug, titulo: p.titulo }))}
+    />
+  );
 }

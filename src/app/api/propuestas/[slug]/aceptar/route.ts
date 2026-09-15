@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { esModalidadValida } from "@/lib/propuestas";
-import { obtenerPropuesta, registrarAceptacion } from "@/lib/propuestas.server";
+import {
+  accesoPropuestaValido,
+  cookieAccesoNombre,
+  obtenerPropuesta,
+  propuestaProtegida,
+  registrarAceptacion,
+} from "@/lib/propuestas.server";
 
 export const dynamic = "force-dynamic";
 
@@ -16,6 +22,16 @@ export async function POST(
       { error: "Propuesta no encontrada" },
       { status: 404 }
     );
+  }
+
+  if (propuestaProtegida(propuesta)) {
+    const token = request.cookies.get(cookieAccesoNombre(slug))?.value;
+    if (!accesoPropuestaValido(propuesta, token)) {
+      return NextResponse.json(
+        { error: "Debes abrir la propuesta con tu contraseña para aceptarla." },
+        { status: 403 }
+      );
+    }
   }
 
   const body = await request.json().catch(() => null);
@@ -42,17 +58,27 @@ export async function POST(
   const nota = typeof body.nota === "string" ? body.nota.trim() : "";
   const fecha = new Date().toISOString();
 
-  const actualizada = registrarAceptacion(slug, {
+  const actualizada = await registrarAceptacion(slug, {
     aceptada: true,
     modalidad,
     nombre,
     email,
     nota,
     fecha,
+  }).catch((error) => {
+    console.error("Error registrando la aceptación:", error);
+    return null;
   });
+
+  if (!actualizada) {
+    return NextResponse.json(
+      { error: "No se pudo guardar la aceptación en el servidor. Intenta nuevamente o escríbenos." },
+      { status: 502 }
+    );
+  }
 
   return NextResponse.json({
     ok: true,
-    aceptacion: actualizada?.aceptacion,
+    aceptacion: actualizada.aceptacion,
   });
 }

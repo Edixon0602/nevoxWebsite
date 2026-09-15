@@ -4,6 +4,7 @@ import { slugify } from "@/lib/propuestas";
 import {
   PANEL_COOKIE,
   guardarPropuesta,
+  hashPasswordPropuesta,
   listarPropuestas,
   slugUnico,
   tokenPanelValido,
@@ -95,6 +96,7 @@ export async function POST(request: NextRequest) {
   const fases = aFases(body.fases);
   const stack = aArreglo(body.stack);
   const condiciones = aArreglo(body.condiciones);
+  const password = texto(body.password);
 
   if (alcance.length === 0) {
     return NextResponse.json(
@@ -131,6 +133,7 @@ export async function POST(request: NextRequest) {
     creada: new Date().toISOString().slice(0, 10),
     validaHasta: texto(body.validaHasta) || undefined,
     aceptacion: null,
+    ...(password ? { passwordHash: hashPasswordPropuesta(password) } : {}),
   };
 
   guardarPropuesta(propuesta);

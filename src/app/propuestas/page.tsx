@@ -6,7 +6,7 @@ import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { formatearFecha, formatearMonto } from "@/lib/propuestas";
 import {
   PANEL_COOKIE,
-  listarPropuestas,
+  listarPropuestasConAceptacion,
   tokenPanelValido,
 } from "@/lib/propuestas.server";
 
@@ -22,7 +22,7 @@ export default async function PropuestasPage() {
     redirect("/propuestas/panel");
   }
 
-  const propuestas = listarPropuestas();
+  const propuestas = await listarPropuestasConAceptacion();
 
   return (
     <SectionWrapper size="hero">

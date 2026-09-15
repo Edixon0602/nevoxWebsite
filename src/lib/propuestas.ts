@@ -45,6 +45,7 @@ export interface Propuesta {
   creada: string;
   validaHasta?: string;
   aceptacion?: Aceptacion | null;
+  passwordHash?: string;
 }
 
 export interface Cuota {

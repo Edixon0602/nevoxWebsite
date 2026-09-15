@@ -3,11 +3,15 @@
   "titulo": "Bot de Automatización P2P — Binance + Banco de Venezuela",
   "proyecto": "Automatización de las operaciones de compra",
   "cliente": "",
-  "resumen": "Sistema que automatiza de principio a fin las operaciones de compra en Binance: acepta la orden, realiza el pago en bolívares, responde automáticamente al comprador y confirma la operación, todo supervisado desde un panel en la nube con alertas en tiempo real.",
+  "resumen": "Sistema que automatiza de principio a fin las operaciones de compra en Binance: acepta la orden, realiza el pago en bolívares desde el Banco de Venezuela como banco principal (con Banesco como respaldo), responde automáticamente al comprador y confirma la operación, todo supervisado desde un panel en la nube con alertas en tiempo real.",
   "alcance": [
     {
       "titulo": "Pago automático validado desde la primera fase",
-      "descripcion": "Confirmamos al inicio que el sistema puede realizar los pagos de forma automática y segura, manteniendo la sesión activa y sin intervención manual."
+      "descripcion": "Confirmamos al inicio que el sistema puede realizar los pagos de forma automática y segura desde el banco principal, manteniendo la sesión activa y sin intervención manual."
+    },
+    {
+      "titulo": "Banco principal y banco de respaldo",
+      "descripcion": "Las operaciones se ejecutan con el Banco de Venezuela como banco principal y Banesco como respaldo, para que el servicio continúe operativo ante cualquier eventualidad con el banco principal."
     },
     {
       "titulo": "Compra automática de órdenes",
@@ -84,6 +88,7 @@
     "El anticipo da inicio formal al proyecto y al bloque de horas reservado.",
     "Cambios o funcionalidades fuera del alcance acordado se cotizan por separado.",
     "Se requiere acceso a las cuentas y credenciales necesarias para las pruebas y la puesta en marcha.",
+    "La operación contempla el Banco de Venezuela como banco principal y Banesco como banco de respaldo.",
     "El correcto funcionamiento depende de que las sesiones de acceso se mantengan activas y sin cambios por parte del cliente.",
     "Propuesta válida por 30 días a partir de su fecha de emisión."
   ],
