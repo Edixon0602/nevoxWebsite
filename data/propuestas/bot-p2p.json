@@ -1,0 +1,137 @@
+{
+  "slug": "bot-p2p",
+  "titulo": "Bot de Automatización P2P — Binance + Banco de Venezuela",
+  "proyecto": "Automatización de operaciones de compra y venta",
+  "cliente": "",
+  "resumen": "Sistema que automatiza de principio a fin las operaciones de compra y venta en Binance: acepta la orden, valida cada operación con preguntas de rigor en el chat, realiza el pago en bolívares desde el Banco de Venezuela como banco principal (con Banesco como respaldo), verifica por cada operación que la cuenta no haya sido congelada con transferencias de prueba, responde automáticamente al comprador y confirma la operación, todo supervisado desde un panel en la nube con alertas en tiempo real y análisis de datos del mercado.",
+  "alcance": [
+    {
+      "titulo": "Pago automático desde el banco principal",
+      "descripcion": "Los pagos se ejecutan de forma automática, directa y controlada desde el banco principal, con la sesión mantenida activa y sin intervención manual."
+    },
+    {
+      "titulo": "Banco principal y banco de respaldo",
+      "descripcion": "Las operaciones se ejecutan con el Banco de Venezuela como banco principal y Banesco como respaldo, para que el servicio continúe operativo ante cualquier eventualidad con el banco principal."
+    },
+    {
+      "titulo": "Compra automática de órdenes",
+      "descripcion": "El sistema acepta y procesa las órdenes de compra, verifica la recepción del pago, realiza la transferencia y adjunta el comprobante sin pasos manuales."
+    },
+    {
+      "titulo": "Venta automática con validación de órdenes",
+      "descripcion": "Manejo del flujo de venta: el sistema verifica cada orden y el agente de IA hace las preguntas de rigor en el chat de Binance para validar si se procede con la orden o no."
+    },
+    {
+      "titulo": "Validación de cuenta con transferencia de prueba",
+      "descripcion": "Por cada orden concretada, el bot realiza una transferencia de prueba a un contacto agregado en el banco para confirmar que la cuenta no haya sido congelada."
+    },
+    {
+      "titulo": "Panel de control y monitoreo",
+      "descripcion": "Acceso desde cualquier dispositivo para configurar el comportamiento de las publicaciones (precio máximo y mínimo, y ajuste automático para aparecer primero), ver la operación en vivo y consultar el historial completo."
+    },
+    {
+      "titulo": "Atención automática a compradores",
+      "descripcion": "Asistente que responde en el chat de cada orden de forma natural: saludos, confirmaciones de pago, tiempos de espera y preguntas frecuentes."
+    },
+    {
+      "titulo": "Alertas de cada operación",
+      "descripcion": "Notificaciones inmediatas por cada operación completada y por los eventos importantes, para que siempre sepas qué está pasando."
+    },
+    {
+      "titulo": "Alertas de bloqueo bancario",
+      "descripcion": "Notificación inmediata si se detecta un bloqueo o restricción en la cuenta bancaria, para pausar la operación y actuar a tiempo."
+    },
+    {
+      "titulo": "Análisis de datos del mercado",
+      "descripcion": "Análisis de los rangos de precio donde se está moviendo el mercado para identificar qué slots están generando mayor rendimiento y ajustar la estrategia."
+    },
+    {
+      "titulo": "Entrega, documentación y puesta en marcha",
+      "descripcion": "Dejamos todo instalado y funcionando en tu equipo, con un manual claro de uso y operación."
+    }
+  ],
+  "entregables": [
+    {
+      "titulo": "Pago automático desde el banco principal",
+      "descripcion": "Semana 1. Pagos ejecutados de forma automática y controlada desde el banco principal."
+    },
+    {
+      "titulo": "Compra automática en Binance",
+      "descripcion": "Flujo completo: aceptación de la orden, pago y comprobante."
+    },
+    {
+      "titulo": "Venta automática con validación en el chat",
+      "descripcion": "Preguntas de rigor del agente de IA para aprobar o rechazar cada orden de venta."
+    },
+    {
+      "titulo": "Validación de cuenta con transferencia de prueba",
+      "descripcion": "Transferencia de prueba tras cada orden concretada para confirmar que la cuenta sigue activa."
+    },
+    {
+      "titulo": "Panel de control",
+      "descripcion": "Configuración de publicaciones, precios e historial de operaciones."
+    },
+    {
+      "titulo": "Atención automática",
+      "descripcion": "Respuestas automáticas a los compradores en el chat."
+    },
+    {
+      "titulo": "Análisis de datos del mercado",
+      "descripcion": "Rangos de precio en movimiento y slots de mayor rendimiento."
+    },
+    {
+      "titulo": "Entrega y puesta en marcha",
+      "descripcion": "Instalación, operación y puesta en marcha en tu equipo."
+    }
+  ],
+  "stack": [],
+  "tiempo": "5 a 6 semanas",
+  "inversion": 900,
+  "moneda": "USD",
+  "fases": [
+    {
+      "periodo": "Semana 1",
+      "titulo": "Pago automático en marcha",
+      "detalle": "El sistema realiza pagos de forma automática y controlada desde el banco principal desde la primera semana."
+    },
+    {
+      "periodo": "Semana 2",
+      "titulo": "Compra automática",
+      "detalle": "Procesamiento de órdenes de compra con pago y comprobante, más la transferencia de prueba tras cada operación."
+    },
+    {
+      "periodo": "Semana 3",
+      "titulo": "Venta automática con validación",
+      "detalle": "Flujo de venta: el agente de IA hace las preguntas de rigor en el chat y decide si se procede con cada orden."
+    },
+    {
+      "periodo": "Semana 4",
+      "titulo": "Panel de control y atención automática",
+      "detalle": "Panel para administrar publicaciones, precios e historial, más respuestas automáticas y alertas de operación y bloqueo bancario."
+    },
+    {
+      "periodo": "Semana 5",
+      "titulo": "Análisis de datos y optimización",
+      "detalle": "Análisis de los rangos de precio donde se mueve el mercado y de los slots con mayor rendimiento para afinar la estrategia."
+    },
+    {
+      "periodo": "Semana 6",
+      "titulo": "Cierre y entrega",
+      "detalle": "Pruebas integrales, documentación y puesta en marcha en tu equipo."
+    }
+  ],
+  "condiciones": [
+    "Inversión total del proyecto: $900 USD.",
+    "Tiempo estimado de desarrollo: 5 a 6 semanas a partir del pago inicial.",
+    "El anticipo da inicio formal al proyecto y al bloque de horas reservado.",
+    "Cambios o funcionalidades fuera del alcance acordado se cotizan por separado.",
+    "Se requiere acceso a las cuentas y credenciales necesarias para las pruebas y la puesta en marcha.",
+    "La operación contempla el Banco de Venezuela como banco principal y Banesco como banco de respaldo.",
+    "El correcto funcionamiento depende de que las sesiones de acceso se mantengan activas y sin cambios por parte del cliente.",
+    "Propuesta válida por 30 días a partir de su fecha de emisión."
+  ],
+  "estado": "enviada",
+  "creada": "2026-09-15",
+  "validaHasta": "2026-10-15",
+  "aceptacion": null
+}
