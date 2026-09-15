@@ -1,0 +1,99 @@
+{
+  "slug": "bot-p2p-binance",
+  "titulo": "Bot de Automatización P2P — Binance + Banco de Venezuela",
+  "proyecto": "Automatización de las operaciones de compra",
+  "cliente": "",
+  "resumen": "Sistema que automatiza de principio a fin las operaciones de compra en Binance: acepta la orden, realiza el pago en bolívares desde el Banco de Venezuela como banco principal (con Banesco como respaldo), responde automáticamente al comprador y confirma la operación, todo supervisado desde un panel en la nube con alertas en tiempo real.",
+  "alcance": [
+    {
+      "titulo": "Pago automático validado desde la primera fase",
+      "descripcion": "Confirmamos al inicio que el sistema puede realizar los pagos de forma automática y segura desde el banco principal, manteniendo la sesión activa y sin intervención manual."
+    },
+    {
+      "titulo": "Banco principal y banco de respaldo",
+      "descripcion": "Las operaciones se ejecutan con el Banco de Venezuela como banco principal y Banesco como respaldo, para que el servicio continúe operativo ante cualquier eventualidad con el banco principal."
+    },
+    {
+      "titulo": "Compra automática de órdenes",
+      "descripcion": "El sistema acepta y procesa las órdenes de compra, verifica la recepción del pago, realiza la transferencia y adjunta el comprobante sin pasos manuales."
+    },
+    {
+      "titulo": "Panel de control y monitoreo",
+      "descripcion": "Acceso desde cualquier dispositivo para configurar el comportamiento de las publicaciones (precio máximo y mínimo, y ajuste automático para aparecer primero), ver la operación en vivo y consultar el historial completo."
+    },
+    {
+      "titulo": "Atención automática a compradores",
+      "descripcion": "Asistente que responde en el chat de cada orden de forma natural: saludos, confirmaciones de pago, tiempos de espera y preguntas frecuentes."
+    },
+    {
+      "titulo": "Alertas de cada operación",
+      "descripcion": "Notificaciones inmediatas por cada operación completada y por los eventos importantes, para que siempre sepas qué está pasando."
+    },
+    {
+      "titulo": "Entrega, documentación y puesta en marcha",
+      "descripcion": "Dejamos todo instalado y funcionando en tu equipo, con un manual claro de uso y operación."
+    }
+  ],
+  "entregables": [
+    {
+      "titulo": "Pago automático validado",
+      "descripcion": "Semana 1. Demostración funcional del pago realizado de forma automática."
+    },
+    {
+      "titulo": "Compra automática en Binance",
+      "descripcion": "Flujo completo: aceptación de la orden, pago y comprobante."
+    },
+    {
+      "titulo": "Panel de control",
+      "descripcion": "Configuración de publicaciones, precios e historial de operaciones."
+    },
+    {
+      "titulo": "Atención automática",
+      "descripcion": "Respuestas automáticas a los compradores en el chat."
+    },
+    {
+      "titulo": "Entrega y puesta en marcha",
+      "descripcion": "Instalación, operación y puesta en marcha en tu equipo."
+    }
+  ],
+  "stack": [],
+  "tiempo": "3 a 4 semanas",
+  "inversion": 720,
+  "moneda": "USD",
+  "fases": [
+    {
+      "periodo": "Semana 1",
+      "titulo": "Validación del pago automático",
+      "detalle": "Confirmamos que el sistema puede realizar los pagos de forma automática y segura antes de continuar."
+    },
+    {
+      "periodo": "Semana 2",
+      "titulo": "Compra automática",
+      "detalle": "Procesamiento de órdenes y flujo completo de compra con pago y comprobante."
+    },
+    {
+      "periodo": "Semana 3",
+      "titulo": "Panel de control y atención automática",
+      "detalle": "Panel para administrar publicaciones, precios e historial, más las respuestas automáticas a compradores."
+    },
+    {
+      "periodo": "Semana 4",
+      "titulo": "Cierre y entrega",
+      "detalle": "Alertas, pruebas finales, documentación y puesta en marcha en tu equipo."
+    }
+  ],
+  "condiciones": [
+    "Inversión total del proyecto: $720 USD.",
+    "Tiempo estimado de desarrollo: 3 a 4 semanas a partir del pago inicial.",
+    "El anticipo da inicio formal al proyecto y al bloque de horas reservado.",
+    "Cambios o funcionalidades fuera del alcance acordado se cotizan por separado.",
+    "Se requiere acceso a las cuentas y credenciales necesarias para las pruebas y la puesta en marcha.",
+    "La operación contempla el Banco de Venezuela como banco principal y Banesco como banco de respaldo.",
+    "El correcto funcionamiento depende de que las sesiones de acceso se mantengan activas y sin cambios por parte del cliente.",
+    "Propuesta válida por 30 días a partir de su fecha de emisión."
+  ],
+  "estado": "enviada",
+  "creada": "2026-09-15",
+  "validaHasta": "2026-10-15",
+  "aceptacion": null
+}
