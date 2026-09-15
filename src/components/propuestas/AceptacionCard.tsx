@@ -64,7 +64,10 @@ export function AceptacionCard({
       const data = await respuesta.json().catch(() => ({}));
 
       if (!respuesta.ok) {
-        setError(data.error || "No se pudo registrar la aceptación.");
+        const mensaje =
+          data.error ||
+          `No se pudo registrar la aceptación (HTTP ${respuesta.status}).`;
+        setError(data.detalle ? `${mensaje} — ${data.detalle}` : mensaje);
         return;
       }
 

@@ -1,9 +1,12 @@
 import type { Aceptacion, ModalidadPago, Propuesta } from "./propuestas";
 import { calcularCuotas } from "./propuestas";
 
-const ADMIN_BASE_URL = process.env.NEVOX_ADMIN_API_URL;
+const ADMIN_BASE_URL = (process.env.NEVOX_ADMIN_API_URL || "").replace(
+  /\/+$/,
+  ""
+);
 const ADMIN_API_KEY = process.env.NEVOX_ADMIN_API_KEY;
-const TIMEOUT_MS = 10000;
+const TIMEOUT_MS = 6000;
 
 export function adminConfigurado(): boolean {
   return Boolean(ADMIN_BASE_URL && ADMIN_API_KEY);
