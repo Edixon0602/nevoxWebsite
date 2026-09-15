@@ -39,6 +39,11 @@ export interface Propuesta {
   tiempo: string;
   inversion: number;
   moneda: string;
+  costoServidor?: {
+    monto: number;
+    periodicidad?: string;
+    descripcion?: string;
+  };
   fases: Fase[];
   condiciones: string[];
   estado: EstadoPropuesta;

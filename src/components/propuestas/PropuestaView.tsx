@@ -4,6 +4,7 @@ import {
   Clock,
   CurrencyDollar,
   FileText,
+  Server,
   Stack as StackIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { Card } from "@/components/ui/Card";
@@ -252,25 +253,56 @@ export function PropuestaView({
         <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-16">
           <Etiqueta>06 — Inversión</Etiqueta>
           <div className="flex flex-col gap-6">
-            <Card innerClassName="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-              <div className="flex items-center gap-4">
-                <CurrencyDollar
-                  weight="duotone"
-                  className="h-8 w-8 text-accent"
-                />
-                <div className="flex flex-col">
-                  <span className="text-sm uppercase tracking-widest text-text-tertiary">
-                    Inversión total
-                  </span>
-                  <span className="font-display text-4xl font-bold text-text-primary">
-                    {formatearMonto(propuesta.inversion, propuesta.moneda)}
-                  </span>
+            <Card innerClassName="flex flex-col gap-6">
+              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                <div className="flex items-center gap-4">
+                  <CurrencyDollar
+                    weight="duotone"
+                    className="h-8 w-8 text-accent"
+                  />
+                  <div className="flex flex-col">
+                    <span className="text-sm uppercase tracking-widest text-text-tertiary">
+                      Inversión total
+                    </span>
+                    <span className="font-display text-4xl font-bold text-text-primary">
+                      {formatearMonto(propuesta.inversion, propuesta.moneda)}
+                    </span>
+                  </div>
                 </div>
+                <p className="max-w-xs text-sm text-text-secondary leading-relaxed">
+                  Elige la modalidad de pago que prefieras al momento de aceptar
+                  la propuesta.
+                </p>
               </div>
-              <p className="max-w-xs text-sm text-text-secondary leading-relaxed">
-                Elige la modalidad de pago que prefieras al momento de aceptar
-                la propuesta.
-              </p>
+              {propuesta.costoServidor ? (
+                <div className="flex flex-col gap-3 border-t border-white/5 pt-6">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <Server weight="duotone" className="h-5 w-5 text-accent" />
+                      <div className="flex flex-col">
+                        <span className="text-xs uppercase tracking-widest text-text-tertiary">
+                          Servidor del panel administrativo
+                        </span>
+                        <span className="text-sm font-medium text-text-primary">
+                          {propuesta.costoServidor.descripcion ||
+                            "Hosting recurrente"}
+                        </span>
+                      </div>
+                    </div>
+                    <span className="font-display text-lg font-bold text-text-primary">
+                      {formatearMonto(
+                        propuesta.costoServidor.monto,
+                        propuesta.moneda
+                      )}{" "}
+                      / {propuesta.costoServidor.periodicidad || "mes"}
+                    </span>
+                  </div>
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    Este costo se factura una vez el proyecto esté desplegado y
+                    operativo; no se cobra con el anticipo inicial.
+                  </p>
+                </div>
+              ) : null}
             </Card>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
