@@ -1,0 +1,58 @@
+import { NextRequest, NextResponse } from "next/server";
+import { esModalidadValida } from "@/lib/propuestas";
+import { obtenerPropuesta, registrarAceptacion } from "@/lib/propuestas.server";
+
+export const dynamic = "force-dynamic";
+
+export async function POST(
+  request: NextRequest,
+  { params }: { params: Promise<{ slug: string }> }
+) {
+  const { slug } = await params;
+  const propuesta = obtenerPropuesta(slug);
+
+  if (!propuesta) {
+    return NextResponse.json(
+      { error: "Propuesta no encontrada" },
+      { status: 404 }
+    );
+  }
+
+  const body = await request.json().catch(() => null);
+
+  if (!body || body.aceptada !== true) {
+    return NextResponse.json(
+      { error: "Debes marcar la casilla para aceptar el presupuesto" },
+      { status: 400 }
+    );
+  }
+
+  const nombre = typeof body.nombre === "string" ? body.nombre.trim() : "";
+  if (nombre.length < 2) {
+    return NextResponse.json(
+      { error: "Indica tu nombre completo" },
+      { status: 400 }
+    );
+  }
+
+  const modalidad = esModalidadValida(body.modalidad)
+    ? body.modalidad
+    : "2-pagos";
+  const email = typeof body.email === "string" ? body.email.trim() : "";
+  const nota = typeof body.nota === "string" ? body.nota.trim() : "";
+  const fecha = new Date().toISOString();
+
+  const actualizada = registrarAceptacion(slug, {
+    aceptada: true,
+    modalidad,
+    nombre,
+    email,
+    nota,
+    fecha,
+  });
+
+  return NextResponse.json({
+    ok: true,
+    aceptacion: actualizada?.aceptacion,
+  });
+}

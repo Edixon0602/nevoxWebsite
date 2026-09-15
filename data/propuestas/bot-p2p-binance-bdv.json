@@ -1,0 +1,101 @@
+{
+  "slug": "bot-p2p-binance-bdv",
+  "titulo": "Bot de Automatización P2P — Binance + Banco de Venezuela",
+  "proyecto": "Automatización de operaciones P2P (compra de USDT)",
+  "cliente": "Cliente",
+  "resumen": "Sistema que automatiza de punta a punta el flujo de compra de USDT en Binance P2P: el bot acepta la orden, ejecuta la transferencia en bolívares a través de la app del Banco de Venezuela corriendo en BlueStacks (vía ADB) con la sesión mantenida activa, responde el chat del comprador con IA y sube el comprobante, todo monitoreado desde un dashboard en la nube con alertas a Telegram.",
+  "alcance": [
+    {
+      "titulo": "POC BlueStacks + ADB + flujo de transferencia BD",
+      "descripcion": "Validación temprana del punto más crítico del proyecto: control de la app del Banco de Venezuela sobre BlueStacks mediante ADB, con sesión persistente (sin re-login biométrico) y ejecución real de transferencias."
+    },
+    {
+      "titulo": "Integración Binance P2P API + flujo completo de compra",
+      "descripcion": "Conexión con la API oficial P2P de Binance: aceptación automática de órdenes, detección del pago recibido, ejecución del pago en bolívares y subida del comprobante a la orden correspondiente."
+    },
+    {
+      "titulo": "Dashboard cloud de gestión y monitoreo",
+      "descripcion": "Panel accesible desde cualquier dispositivo para configurar anuncios (precio máximo y mínimo, ajuste automático para posicionarse primero), monitorear el bot e inspeccionar el historial de operaciones."
+    },
+    {
+      "titulo": "IA conversacional para el chat P2P",
+      "descripcion": "Agente de IA que responde de forma inteligente a los compradores en el chat de Binance P2P: saludos, confirmación de pagos, tiempos de espera y consultas frecuentes."
+    },
+    {
+      "titulo": "Notificaciones a Telegram",
+      "descripcion": "Bot de Telegram que notifica cada operación completada y los eventos relevantes del sistema en tiempo real."
+    },
+    {
+      "titulo": "Documentación y puesta en marcha",
+      "descripcion": "Manual de instalación y uso del sistema, más el setup completo del bot, BlueStacks, ADB, dashboard y credenciales en la máquina del cliente."
+    }
+  ],
+  "entregables": [
+    {
+      "titulo": "POC BlueStacks + ADB + flujo transferencia BD",
+      "descripcion": "Semana 1. Demostración funcional de la transferencia automatizada desde la app del Banco de Venezuela."
+    },
+    {
+      "titulo": "Integración Binance P2P API",
+      "descripcion": "Flujo completo de compra: aceptación de orden, pago y subida de comprobante."
+    },
+    {
+      "titulo": "Dashboard cloud",
+      "descripcion": "Configuración de anuncios, precios e historial de operaciones."
+    },
+    {
+      "titulo": "IA chatbot P2P",
+      "descripcion": "Respuestas inteligentes a los compradores dentro del chat de Binance."
+    },
+    {
+      "titulo": "Documentación + setup",
+      "descripcion": "Instalación, operación y despliegue en la máquina del cliente."
+    }
+  ],
+  "stack": [
+    "Python + ADB",
+    "Binance P2P API oficial",
+    "BlueStacks",
+    "Supabase / VPS",
+    "IA conversacional",
+    "Telegram Bot API"
+  ],
+  "tiempo": "3 a 4 semanas (con POC de BlueStacks/BD validado en la semana 1)",
+  "inversion": 720,
+  "moneda": "USD",
+  "fases": [
+    {
+      "periodo": "Semana 1",
+      "titulo": "POC y validación técnica",
+      "detalle": "BlueStacks + ADB + flujo de transferencia en el Banco de Venezuela. Validamos viabilidad antes de escalar el resto del sistema."
+    },
+    {
+      "periodo": "Semana 2",
+      "titulo": "Integración Binance P2P",
+      "detalle": "API oficial, aceptación de órdenes y flujo completo de compra con pago y comprobante."
+    },
+    {
+      "periodo": "Semana 3",
+      "titulo": "Dashboard + IA",
+      "detalle": "Panel cloud con configuración de anuncios e historial, y agente de IA para el chat P2P."
+    },
+    {
+      "periodo": "Semana 4",
+      "titulo": "Cierre y entrega",
+      "detalle": "Notificaciones a Telegram, pruebas integrales, documentación y setup en la máquina del cliente."
+    }
+  ],
+  "condiciones": [
+    "Inversión total del proyecto: $720 USD.",
+    "Tiempo estimado de desarrollo: 3 a 4 semanas a partir del pago inicial.",
+    "El anticipo da inicio formal al proyecto y al bloque de horas reservado.",
+    "Cambios o funcionalidades fuera del alcance acordado se cotizan por separado.",
+    "Se requiere acceso a la cuenta de Binance P2P y a la banca en línea del cliente para pruebas.",
+    "El bot opera sobre la sesión de BlueStacks del cliente; su estabilidad depende de que la sesión permanezca válida.",
+    "Propuesta válida por 30 días a partir de su fecha de emisión."
+  ],
+  "estado": "enviada",
+  "creada": "2026-09-15",
+  "validaHasta": "2026-10-15",
+  "aceptacion": null
+}

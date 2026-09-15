@@ -66,7 +66,7 @@ Thumbs.db
 # Documents, PDFs & Proposals
 *.pdf
 /propuestas/
-Propuesta*
+/Propuesta*
 
 # Temporary & debug files
 temp_*
