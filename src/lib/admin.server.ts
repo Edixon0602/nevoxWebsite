@@ -25,18 +25,37 @@ async function adminFetch(
   init: RequestInit = {}
 ): Promise<Response> {
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  const abortTimer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
+  const fetchPromise = fetch(`${ADMIN_BASE_URL}${path}`, {
+    ...init,
+    headers: cabeceras(init.headers as Record<string, string> | undefined),
+    signal: controller.signal,
+    cache: "no-store",
+  });
+
+  const timeoutPromise = new Promise<never>((_, reject) => {
+    setTimeout(
+      () => reject(new Error(`Timeout al llamar al admin (${TIMEOUT_MS}ms)`)),
+      TIMEOUT_MS
+    );
+  });
 
   try {
-    return await fetch(`${ADMIN_BASE_URL}${path}`, {
-      ...init,
-      headers: cabeceras(init.headers as Record<string, string> | undefined),
-      signal: controller.signal,
-      cache: "no-store",
-    });
+    return await Promise.race([fetchPromise, timeoutPromise]);
   } finally {
-    clearTimeout(timer);
+    clearTimeout(abortTimer);
   }
+}
+
+export async function probarAdmin(
+  slug: string
+): Promise<{ status: number; body: string }> {
+  const respuesta = await adminFetch(
+    `/propuestas/${encodeURIComponent(slug)}/aceptacion`
+  );
+  const body = await respuesta.text().catch(() => "");
+  return { status: respuesta.status, body: body.slice(0, 300) };
 }
 
 interface RespuestaAceptacion {

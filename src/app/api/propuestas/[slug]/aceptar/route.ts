@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { esModalidadValida } from "@/lib/propuestas";
-import { adminConfigurado } from "@/lib/admin.server";
+import { adminConfigurado, probarAdmin } from "@/lib/admin.server";
 import {
   accesoPropuestaValido,
   cookieAccesoNombre,
@@ -12,17 +12,32 @@ import {
 export const dynamic = "force-dynamic";
 
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
   const propuesta = obtenerPropuesta(slug);
+  const url = new URL(request.url);
 
-  return NextResponse.json({
+  const base = {
     propuestaExiste: Boolean(propuesta),
     protegida: propuesta ? propuestaProtegida(propuesta) : false,
     adminConfigurado: adminConfigurado(),
-  });
+  };
+
+  if (url.searchParams.get("probe") === "1" && adminConfigurado()) {
+    try {
+      const sonda = await probarAdmin(slug);
+      return NextResponse.json({ ...base, admin: sonda });
+    } catch (error) {
+      return NextResponse.json({
+        ...base,
+        adminError: String(error).slice(0, 300),
+      });
+    }
+  }
+
+  return NextResponse.json(base);
 }
 
 export async function POST(
