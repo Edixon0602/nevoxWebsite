@@ -84,7 +84,10 @@ export default async function PropuestasPage() {
                       </span>
                     </div>
                     <span className="text-sm text-text-secondary">
-                      {propuesta.cliente} · {formatearFecha(propuesta.creada)}
+                      {propuesta.cliente?.trim()
+                        ? `${propuesta.cliente.trim()} · `
+                        : ""}
+                      {formatearFecha(propuesta.creada)}
                     </span>
                   </div>
                   <div className="flex items-center gap-4">

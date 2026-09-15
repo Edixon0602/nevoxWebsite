@@ -57,7 +57,6 @@ export function GeneradorPropuestas({
   const [fases, setFases] = React.useState<FaseForm[]>([
     { periodo: "", titulo: "", detalle: "" },
   ]);
-  const [stack, setStack] = React.useState("");
   const [condiciones, setCondiciones] = React.useState("");
   const [enviando, setEnviando] = React.useState(false);
   const [error, setError] = React.useState("");
@@ -78,7 +77,6 @@ export function GeneradorPropuestas({
     setAlcance([{ titulo: "", descripcion: "" }]);
     setEntregables([{ titulo: "", descripcion: "" }]);
     setFases([{ periodo: "", titulo: "", detalle: "" }]);
-    setStack("");
     setCondiciones("");
     setCreada(null);
     setError("");
@@ -103,7 +101,6 @@ export function GeneradorPropuestas({
       alcance: alcance.filter((b) => b.titulo || b.descripcion),
       entregables: entregables.filter((b) => b.titulo || b.descripcion),
       fases: fases.filter((f) => f.titulo || f.detalle || f.periodo),
-      stack,
       condiciones,
     };
 
@@ -537,34 +534,22 @@ export function GeneradorPropuestas({
 
           <Card innerClassName="flex flex-col gap-6">
             <h2 className="font-display text-xl font-bold text-text-primary">
-              Tecnología y condiciones
+              Condiciones
             </h2>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <label className="flex flex-col gap-2">
-                <span className={labelText}>
-                  Stack (una tecnología por línea)
-                </span>
-                <textarea
-                  className={`${inputClass} resize-none`}
-                  rows={6}
-                  value={stack}
-                  onChange={(e) => setStack(e.target.value)}
-                  placeholder={"Python + ADB\nBinance P2P API\nSupabase"}
-                />
-              </label>
-              <label className="flex flex-col gap-2">
-                <span className={labelText}>
-                  Condiciones (una por línea)
-                </span>
-                <textarea
-                  className={`${inputClass} resize-none`}
-                  rows={6}
-                  value={condiciones}
-                  onChange={(e) => setCondiciones(e.target.value)}
-                  placeholder={"Inversión total: $720 USD\nAnticipo para iniciar"}
-                />
-              </label>
-            </div>
+            <label className="flex flex-col gap-2">
+              <span className={labelText}>
+                Condiciones (una por línea)
+              </span>
+              <textarea
+                className={`${inputClass} resize-none`}
+                rows={6}
+                value={condiciones}
+                onChange={(e) => setCondiciones(e.target.value)}
+                placeholder={
+                  "Inversión total: $720 USD\nAnticipo para iniciar\nPropuesta válida por 30 días"
+                }
+              />
+            </label>
           </Card>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">

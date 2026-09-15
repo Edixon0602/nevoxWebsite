@@ -4,7 +4,6 @@ import {
   Clock,
   CurrencyDollar,
   FileText,
-  SealCheck,
   Stack as StackIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { Card } from "@/components/ui/Card";
@@ -16,7 +15,6 @@ import {
   formatearMonto,
   type Propuesta,
 } from "@/lib/propuestas";
-import Link from "next/link";
 
 function Etiqueta({ children }: { children: React.ReactNode }) {
   return (
@@ -45,6 +43,9 @@ export function PropuestaView({
   children?: React.ReactNode;
 }) {
   const aceptada = propuesta.estado === "aceptada" && propuesta.aceptacion;
+  const nombreCliente = propuesta.cliente?.trim();
+  const mostrarCliente =
+    !!nombreCliente && nombreCliente.toLowerCase() !== "cliente";
 
   return (
     <div className="w-full">
@@ -76,7 +77,9 @@ export function PropuestaView({
           </p>
 
           <div className="flex flex-wrap gap-x-12 gap-y-6 pt-2">
-            <Dato label="Cliente" value={propuesta.cliente} />
+            {mostrarCliente ? (
+              <Dato label="Cliente" value={nombreCliente} />
+            ) : null}
             <Dato
               label="Inversión"
               value={formatearMonto(propuesta.inversion, propuesta.moneda)}
@@ -196,37 +199,50 @@ export function PropuestaView({
       {propuesta.stack.length > 0 || propuesta.tiempo ? (
         <SectionWrapper size="default" className="bg-surface/30">
           <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-16">
-            <Etiqueta>05 — Tecnología</Etiqueta>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card innerClassName="flex flex-col gap-5">
-                <div className="flex items-center gap-3">
-                  <StackIcon weight="duotone" className="h-6 w-6 text-accent" />
-                  <h3 className="font-display text-xl font-bold text-text-primary">
-                    Stack
-                  </h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {propuesta.stack.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-text-secondary"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </Card>
-              <Card innerClassName="flex flex-col gap-5">
-                <div className="flex items-center gap-3">
-                  <Clock weight="duotone" className="h-6 w-6 text-accent" />
-                  <h3 className="font-display text-xl font-bold text-text-primary">
-                    Tiempo estimado
-                  </h3>
-                </div>
-                <p className="text-sm text-text-secondary leading-relaxed">
-                  {propuesta.tiempo}
-                </p>
-              </Card>
+            <Etiqueta>
+              {propuesta.stack.length > 0 ? "05 — Tecnología" : "05 — Plazos"}
+            </Etiqueta>
+            <div
+              className={`grid grid-cols-1 gap-6 ${
+                propuesta.stack.length > 0 ? "md:grid-cols-2" : ""
+              }`}
+            >
+              {propuesta.stack.length > 0 ? (
+                <Card innerClassName="flex flex-col gap-5">
+                  <div className="flex items-center gap-3">
+                    <StackIcon
+                      weight="duotone"
+                      className="h-6 w-6 text-accent"
+                    />
+                    <h3 className="font-display text-xl font-bold text-text-primary">
+                      Stack
+                    </h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {propuesta.stack.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-text-secondary"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </Card>
+              ) : null}
+              {propuesta.tiempo ? (
+                <Card innerClassName="flex flex-col gap-5">
+                  <div className="flex items-center gap-3">
+                    <Clock weight="duotone" className="h-6 w-6 text-accent" />
+                    <h3 className="font-display text-xl font-bold text-text-primary">
+                      Tiempo estimado
+                    </h3>
+                  </div>
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {propuesta.tiempo}
+                  </p>
+                </Card>
+              ) : null}
             </div>
           </div>
         </SectionWrapper>
@@ -330,22 +346,6 @@ export function PropuestaView({
       ) : null}
 
       {children}
-
-      <SectionWrapper size="default">
-        <div className="flex flex-col items-center gap-4 text-center">
-          <SealCheck weight="duotone" className="h-8 w-8 text-accent" />
-          <p className="max-w-xl text-sm text-text-secondary">
-            ¿Tienes dudas sobre esta propuesta?{" "}
-            <Link
-              href="/#contacto"
-              className="font-medium text-accent hover:underline"
-            >
-              Conversemos
-            </Link>{" "}
-            y ajustamos los detalles.
-          </p>
-        </div>
-      </SectionWrapper>
     </div>
   );
 }

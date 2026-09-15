@@ -117,7 +117,7 @@ export async function POST(request: NextRequest) {
     slug,
     titulo,
     proyecto: texto(body.proyecto) || titulo,
-    cliente: texto(body.cliente) || "Cliente",
+    cliente: texto(body.cliente),
     resumen: texto(body.resumen),
     alcance,
     entregables,
