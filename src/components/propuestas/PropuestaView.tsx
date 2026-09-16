@@ -4,7 +4,7 @@ import {
   Clock,
   CurrencyDollar,
   FileText,
-  Server,
+  HardDrives,
   Stack as StackIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { Card } from "@/components/ui/Card";
@@ -278,7 +278,7 @@ export function PropuestaView({
                 <div className="flex flex-col gap-3 border-t border-white/5 pt-6">
                   <div className="flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
-                      <Server weight="duotone" className="h-5 w-5 text-accent" />
+                      <HardDrives weight="duotone" className="h-5 w-5 text-accent" />
                       <div className="flex flex-col">
                         <span className="text-xs uppercase tracking-widest text-text-tertiary">
                           Servidor del panel administrativo
