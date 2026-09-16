@@ -3,7 +3,7 @@
   "titulo": "Bot de Automatización P2P — Binance + Banco de Venezuela",
   "proyecto": "Automatización de operaciones de compra y venta",
   "cliente": "",
-  "resumen": "Sistema que automatiza de principio a fin las operaciones de compra y venta en Binance: acepta la orden, valida cada operación con preguntas de rigor en el chat, realiza el pago en bolívares desde el Banco de Venezuela como banco principal (con Banesco como respaldo), verifica con transferencias de prueba que la cuenta no haya sido congelada al concretarse cada venta, responde automáticamente al comprador y confirma la operación, todo supervisado desde un panel en la nube con alertas en tiempo real, posicionamiento automático y análisis de datos del mercado.",
+  "resumen": "Sistema que automatiza de principio a fin las operaciones de compra y venta en Binance: acepta la orden, valida cada operación con preguntas de rigor en el chat, realiza el pago en bolívares desde el Banco de Venezuela como banco principal (con Banesco como respaldo), verifica con transferencias de prueba, antes de concretar cada venta, que la cuenta no haya sido congelada, responde automáticamente al comprador y confirma la operación, todo supervisado desde un panel en la nube con alertas en tiempo real, posicionamiento automático y análisis de datos del mercado.",
   "alcance": [
     {
       "titulo": "Pago automático desde el banco principal",
@@ -23,7 +23,7 @@
     },
     {
       "titulo": "Validación de cuenta con transferencia de prueba",
-      "descripcion": "Por cada orden de venta concretada, el bot realiza una transferencia de prueba a un contacto agregado en el banco para confirmar que la cuenta no haya sido congelada y no se comprometan los fondos."
+      "descripcion": "Antes de concretar cada orden de venta, el bot realiza una transferencia de prueba a un contacto agregado en el banco para confirmar que la cuenta no haya sido congelada y decidir si se libera la orden o no."
     },
     {
       "titulo": "Posicionamiento y reposicionamiento automático",
@@ -69,7 +69,7 @@
     },
     {
       "titulo": "Validación de cuenta con transferencia de prueba",
-      "descripcion": "Transferencia de prueba tras cada orden de venta concretada para confirmar que la cuenta sigue activa y los fondos están seguros."
+      "descripcion": "Transferencia de prueba antes de concretar cada venta para confirmar que la cuenta sigue activa y decidir si se libera la orden."
     },
     {
       "titulo": "Posicionamiento y reposicionamiento automático",
@@ -115,7 +115,7 @@
     {
       "periodo": "Semana 3",
       "titulo": "Venta automática con validación",
-      "detalle": "Flujo de venta: el agente de IA hace las preguntas de rigor en el chat y decide si se procede con cada orden. Al concretarse la venta, se ejecuta la transferencia de prueba para confirmar que la cuenta sigue activa."
+      "detalle": "Flujo de venta: el agente de IA hace las preguntas de rigor en el chat y decide si se procede con cada orden. Antes de concretar la venta, se ejecuta la transferencia de prueba para confirmar que la cuenta sigue activa y se libera la orden."
     },
     {
       "periodo": "Semana 4",
