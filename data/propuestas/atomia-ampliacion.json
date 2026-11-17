@@ -27,11 +27,11 @@
     },
     {
       "titulo": "Conexión con teléfonos Android físicos",
-      "descripcion": "Revisamos el gestor de dispositivos actual y lo preparamos para trabajar con un teléfono Android físico por agente, con detección del equipo, reconexión automática y soporte para distintas pantallas. El sistema elige el dispositivo correcto cuando hay un emulador y un teléfono conectados al mismo tiempo. Se prueba con el equipo que entregues. No incluye granjas de varios teléfonos, gestión remota de equipos ni iPhone."
+      "descripcion": "Revisamos el gestor de dispositivos actual y lo preparamos para trabajar con un teléfono Android físico por agente, con detección del equipo, reconexión automática y soporte para distintas pantallas. El sistema elige el dispositivo correcto cuando hay un emulador y un teléfono conectados al mismo tiempo. Se prueba con el equipo en uso. No incluye granjas de varios teléfonos, gestión remota de equipos ni iPhone."
     },
     {
       "titulo": "Página pública, planes y autoservicio",
-      "descripcion": "Una página pública presenta el producto, sus funciones, los planes con sus precios, las preguntas frecuentes y una llamada a la acción. El usuario se registra con nombre, correo, contraseña y plan de interés; verifica su correo, recupera su contraseña y recibe automáticamente su cuenta y su espacio de trabajo. El recorrido de inicio lo lleva paso a paso para conectar Binance, generar el código del agente y descargar el instalador. Desde un panel administras los registros y activas o rechazas cada plan. La página funciona en teléfono y en computadora. Los textos legales los entregas tú y nosotros los publicamos."
+      "descripcion": "Una página pública presenta el producto, sus funciones, los planes con sus precios, las preguntas frecuentes y una llamada a la acción. El usuario se registra con nombre, correo, contraseña y plan de interés; verifica su correo, recupera su contraseña y recibe automáticamente su cuenta y su espacio de trabajo. El recorrido de inicio lo lleva paso a paso para conectar Binance, generar el código del agente y descargar el instalador. Desde un panel administras los registros y activas o rechazas cada plan. La página funciona en teléfono y en computadora."
     }
   ],
   "entregables": [
@@ -89,13 +89,10 @@
     "Los cambios posteriores a la entrega se cotizan a $10 por hora. El mantenimiento mensual del área contable y del bot es opcional y se ofrece por separado en $160 al mes.",
     "Fuera de alcance: recibos en PDF con código QR o envío al chat, motor de ciclos y ganancia por vuelta, control de gastos y facturas fiscales, tasas oficiales automáticas, IVA, bot de consulta por Telegram, cobro automático y suscripciones, aplicación móvil nativa, granjas de varios dispositivos o cuentas, asesoría contable o legal y migración de datos desde otro sistema. Cada uno se cotiza aparte si lo necesitas.",
     "La lectura de comprobantes de otros bancos (Banesco, Provincial y BNC) se cotiza por separado.",
-    "Necesitamos de tu parte: capturas de comprobantes de cada banco, un teléfono Android con la depuración por cable habilitada, video o capturas de una ventana real y la definición de los planes con nombre, precio, límites y funciones.",
-    "Necesitamos también tu logo, colores y textos legales, credenciales de correo del dominio para verificación y recuperación, y acceso de solo lectura a Binance.",
-    "Si falta algún insumo, el cronograma corre desde que se recibe y el trabajo adicional se cotiza a $10 por hora.",
     "El bot no evade captchas, no falsifica el dispositivo y no opera más de una cuenta. No se garantiza capturar todas las ventanas: depende del cupo, la cola y la red del banco.",
     "La lectura de comprobantes no es infalible: los casos dudosos se marcan para revisión.",
     "Si el banco limita o bloquea la cuenta, el cliente asume el riesgo y los términos del banco; no se evaden controles.",
-    "Si la aplicación del banco cambia sus pantallas tras una actualización, el ajuste forma parte del mantenimiento mensual. Otros modelos de teléfono distintos al que entregues se cotizan aparte.",
+    "Si la aplicación del banco cambia sus pantallas tras una actualización, el ajuste forma parte del mantenimiento mensual. Otros modelos de teléfono se cotizan aparte.",
     "La propuesta es válida por 30 días desde su emisión y requiere aprobación por escrito antes de iniciar."
   ],
   "estado": "enviada",
