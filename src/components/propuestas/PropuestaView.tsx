@@ -52,6 +52,24 @@ export function PropuestaView({
     ? cuotasDePropuesta(propuesta, "3-pagos")
     : null;
 
+  const bloques = [
+    { clave: "resumen", visible: Boolean(propuesta.resumen) },
+    { clave: "alcance", visible: propuesta.alcance.length > 0 },
+    { clave: "entregables", visible: propuesta.entregables.length > 0 },
+    { clave: "cronograma", visible: propuesta.fases.length > 0 },
+    {
+      clave: "plazos",
+      visible: propuesta.stack.length > 0 || Boolean(propuesta.tiempo),
+    },
+    { clave: "inversion", visible: true },
+    { clave: "condiciones", visible: propuesta.condiciones.length > 0 },
+  ];
+  const numero = (clave: string) => {
+    const visibles = bloques.filter((bloque) => bloque.visible);
+    const indice = visibles.findIndex((bloque) => bloque.clave === clave);
+    return String(indice + 1).padStart(2, "0");
+  };
+
   return (
     <div className="w-full">
       <SectionWrapper size="hero" className="relative pt-36">
@@ -103,7 +121,7 @@ export function PropuestaView({
       {propuesta.resumen ? (
         <SectionWrapper size="default" className="bg-surface/30">
           <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-16">
-            <Etiqueta>01 — Resumen</Etiqueta>
+            <Etiqueta>{numero("resumen")} — Resumen</Etiqueta>
             <Card>
               <p className="text-lg text-text-secondary leading-relaxed text-balance">
                 {propuesta.resumen}
@@ -116,7 +134,7 @@ export function PropuestaView({
       {propuesta.alcance.length > 0 ? (
         <SectionWrapper size="default">
           <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-16">
-            <Etiqueta>02 — Alcance</Etiqueta>
+            <Etiqueta>{numero("alcance")} — Alcance</Etiqueta>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {propuesta.alcance.map((bloque, index) => (
                 <Card key={bloque.titulo + index} innerClassName="flex flex-col gap-4">
@@ -139,7 +157,7 @@ export function PropuestaView({
       {propuesta.entregables.length > 0 ? (
         <SectionWrapper size="default" className="bg-surface/30">
           <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-16">
-            <Etiqueta>03 — Entregables</Etiqueta>
+            <Etiqueta>{numero("entregables")} — Entregables</Etiqueta>
             <div className="flex flex-col divide-y divide-white/5 rounded-2xl border border-white/5 bg-surface/40">
               {propuesta.entregables.map((entregable, index) => (
                 <div
@@ -170,7 +188,7 @@ export function PropuestaView({
       {propuesta.fases.length > 0 ? (
         <SectionWrapper size="default">
           <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-16">
-            <Etiqueta>04 — Cronograma</Etiqueta>
+            <Etiqueta>{numero("cronograma")} — Cronograma</Etiqueta>
             <div className="flex flex-col gap-4">
               {propuesta.fases.map((fase, index) => (
                 <div
@@ -205,7 +223,9 @@ export function PropuestaView({
         <SectionWrapper size="default" className="bg-surface/30">
           <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-16">
             <Etiqueta>
-              {propuesta.stack.length > 0 ? "05 — Tecnología" : "05 — Plazos"}
+              {`${numero("plazos")} — ${
+                propuesta.stack.length > 0 ? "Tecnología" : "Plazos"
+              }`}
             </Etiqueta>
             <div
               className={`grid grid-cols-1 gap-6 ${
@@ -255,7 +275,7 @@ export function PropuestaView({
 
       <SectionWrapper size="default">
         <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-16">
-          <Etiqueta>06 — Inversión</Etiqueta>
+          <Etiqueta>{numero("inversion")} — Inversión</Etiqueta>
           <div className="flex flex-col gap-6">
             <Card innerClassName="flex flex-col gap-6">
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -393,7 +413,7 @@ export function PropuestaView({
       {propuesta.condiciones.length > 0 ? (
         <SectionWrapper size="default" className="bg-surface/30">
           <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-16">
-            <Etiqueta>07 — Condiciones</Etiqueta>
+            <Etiqueta>{numero("condiciones")} — Condiciones</Etiqueta>
             <Card innerClassName="flex flex-col gap-5">
               <div className="flex items-center gap-3">
                 <FileText weight="duotone" className="h-6 w-6 text-accent" />

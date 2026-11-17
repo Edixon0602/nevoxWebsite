@@ -77,48 +77,7 @@
     "periodicidad": "mensual",
     "descripcion": "Servidor del panel administrativo"
   },
-  "fases": [
-    {
-      "periodo": "Semana 1",
-      "titulo": "Viabilidad del bot, calculadora y estructura de datos",
-      "detalle": "Se documenta el flujo real de la intervención, se prueba el recorrido sin comprar y se entrega el informe con la recomendación. En paralelo quedan listas la calculadora y la estructura que ordena las operaciones."
-    },
-    {
-      "periodo": "Semana 2",
-      "titulo": "Historial de operaciones y lectura de comprobantes",
-      "detalle": "Importación de los últimos seis meses, sincronización continua y lectura de comprobantes del Banco de Venezuela y de Mercantil."
-    },
-    {
-      "periodo": "Semana 3",
-      "titulo": "Pantalla de revisión y libro contable",
-      "detalle": "Revisión y corrección de comprobantes dudosos, más el libro contable en Excel y en formato de hoja de cálculo, con su hoja de conciliación."
-    },
-    {
-      "periodo": "Semana 4",
-      "titulo": "Página pública, planes y registro",
-      "detalle": "Página con propuesta de valor, funciones, precios y preguntas frecuentes, más el registro de usuarios con verificación de correo."
-    },
-    {
-      "periodo": "Semana 5",
-      "titulo": "Puesta en marcha y activación de planes",
-      "detalle": "Recorrido guiado para conectar Binance, generar el código del agente y descargar el instalador, con el panel para activar o rechazar planes."
-    },
-    {
-      "periodo": "Semanas 5 a 6",
-      "titulo": "Bot y conexión del dispositivo físico",
-      "detalle": "Programación de la ventana, precalentamiento, compra con confirmación, avisos y registro de intentos, más la puesta a punto con tu teléfono Android."
-    },
-    {
-      "periodo": "Semanas 7 a 8",
-      "titulo": "Pruebas integrales y ventanas reales",
-      "detalle": "Afinado del bot en tres ventanas reales, pruebas de extremo a extremo y corrección de detalles."
-    },
-    {
-      "periodo": "Semanas 9 a 10",
-      "titulo": "Aceptación, documentación y cierre",
-      "detalle": "Pruebas de aceptación contigo, documentación de uso y puesta en marcha definitiva."
-    }
-  ],
+  "fases": [],
   "condiciones": [
     "Inversión total de la ampliación: $930 USD, con 30 días de garantía por fallas funcionales.",
     "Forma de pago: al aceptar eliges entre 2 cuotas (50% al inicio y 50% contra entrega) o 3 cuotas (33% al inicio, 33% a la mitad y 33% contra entrega).",
