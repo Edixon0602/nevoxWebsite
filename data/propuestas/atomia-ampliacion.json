@@ -27,11 +27,11 @@
     },
     {
       "titulo": "Conexión con teléfonos Android físicos",
-      "descripcion": "Revisamos el gestor de dispositivos actual y lo preparamos para trabajar con un teléfono Android físico por agente: reconocimiento por número de serie, autorización por cable, reconexión automática y ajuste a distintas resoluciones. El sistema elige el dispositivo correcto cuando hay un emulador y un teléfono conectados al mismo tiempo. Se prueba con el equipo que entregues y se entrega una guía para repetir la configuración desde cero. No incluye granjas de varios teléfonos, gestión remota de equipos ni iPhone."
+      "descripcion": "Revisamos el gestor de dispositivos actual y lo preparamos para trabajar con un teléfono Android físico por agente: reconocimiento por número de serie, autorización por cable, reconexión automática y ajuste a distintas resoluciones. El sistema elige el dispositivo correcto cuando hay un emulador y un teléfono conectados al mismo tiempo. Se prueba con el equipo que entregues. No incluye granjas de varios teléfonos, gestión remota de equipos ni iPhone."
     },
     {
       "titulo": "Página pública, planes y autoservicio",
-      "descripcion": "Una página pública presenta el producto, sus funciones, los planes con sus precios, las preguntas frecuentes y una llamada a la acción. El usuario se registra con nombre, correo, contraseña y plan de interés; verifica su correo, recupera su contraseña y recibe automáticamente su cuenta y su espacio de trabajo. Una guía de inicio lo acompaña para conectar Binance, generar el código del agente y descargar el instalador. Desde un panel administras los registros y activas o rechazas cada plan. La página funciona en teléfono y en computadora. Los textos legales los entregas tú y nosotros los publicamos."
+      "descripcion": "Una página pública presenta el producto, sus funciones, los planes con sus precios, las preguntas frecuentes y una llamada a la acción. El usuario se registra con nombre, correo, contraseña y plan de interés; verifica su correo, recupera su contraseña y recibe automáticamente su cuenta y su espacio de trabajo. El recorrido de inicio lo lleva paso a paso para conectar Binance, generar el código del agente y descargar el instalador. Desde un panel administras los registros y activas o rechazas cada plan. La página funciona en teléfono y en computadora. Los textos legales los entregas tú y nosotros los publicamos."
     }
   ],
   "entregables": [
@@ -57,7 +57,7 @@
     },
     {
       "titulo": "Dispositivo físico operativo",
-      "descripcion": "El agente se conecta al teléfono, resiste una desconexión y reconexión, ejecuta una operación de prueba y la guía permite replicar la configuración desde cero."
+      "descripcion": "El agente se conecta al teléfono, resiste una desconexión y reconexión y ejecuta una operación de prueba."
     },
     {
       "titulo": "Autoservicio funcionando",
@@ -65,7 +65,7 @@
     },
     {
       "titulo": "Documentación y cierre",
-      "descripcion": "Guías de uso y operación, pruebas de aceptación verificadas y puesta en marcha en el servidor actual."
+      "descripcion": "Documentación de uso y operación, pruebas de aceptación y puesta en marcha en el servidor actual."
     }
   ],
   "stack": [],
