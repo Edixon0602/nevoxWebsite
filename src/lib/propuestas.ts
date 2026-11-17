@@ -18,6 +18,11 @@ export interface Fase {
   detalle: string;
 }
 
+export interface PagoAcordado {
+  etiqueta: string;
+  monto: number;
+}
+
 export interface Aceptacion {
   aceptada: boolean;
   modalidad: ModalidadPago;
@@ -46,6 +51,7 @@ export interface Propuesta {
   };
   fases: Fase[];
   condiciones: string[];
+  pagos?: PagoAcordado[];
   estado: EstadoPropuesta;
   creada: string;
   validaHasta?: string;
@@ -99,6 +105,37 @@ export function calcularCuotas(
       etiqueta: hitos[i],
       monto: centavos / 100,
       porcentaje: Math.round((centavos / totalCentavos) * 100),
+    };
+  });
+}
+
+export function cuotasDePropuesta(
+  propuesta: Pick<Propuesta, "inversion" | "pagos">,
+  modalidad: ModalidadPago
+): Cuota[] {
+  const pagos = (propuesta.pagos ?? []).filter(
+    (pago) => Number.isFinite(pago.monto) && pago.monto > 0
+  );
+
+  if (pagos.length === 0) {
+    return calcularCuotas(propuesta.inversion, modalidad);
+  }
+
+  const total = pagos.reduce((suma, pago) => suma + pago.monto, 0);
+  let acumulado = 0;
+
+  return pagos.map((pago, index) => {
+    const porcentaje =
+      index === pagos.length - 1
+        ? Math.round(((total - acumulado) / total) * 100)
+        : Math.round((pago.monto / total) * 100);
+    acumulado += pago.monto;
+
+    return {
+      numero: index + 1,
+      etiqueta: pago.etiqueta,
+      monto: pago.monto,
+      porcentaje,
     };
   });
 }

@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import type { BloqueAlcance, Entregable, Fase, Propuesta } from "@/lib/propuestas";
+import type {
+  BloqueAlcance,
+  Entregable,
+  Fase,
+  PagoAcordado,
+  Propuesta,
+} from "@/lib/propuestas";
 import { slugify } from "@/lib/propuestas";
 import {
   PANEL_COOKIE,
@@ -58,6 +64,16 @@ function aFases(valor: unknown): Fase[] {
     .filter((item) => item.titulo || item.detalle || item.periodo);
 }
 
+function aPagos(valor: unknown): PagoAcordado[] {
+  if (!Array.isArray(valor)) return [];
+  return valor
+    .map((item) => ({
+      etiqueta: texto((item as PagoAcordado)?.etiqueta),
+      monto: Number((item as PagoAcordado)?.monto),
+    }))
+    .filter((item) => item.etiqueta && Number.isFinite(item.monto) && item.monto > 0);
+}
+
 export async function GET(request: NextRequest) {
   if (!estaAutorizado(request)) {
     return NextResponse.json({ error: "No autorizado" }, { status: 401 });
@@ -94,6 +110,7 @@ export async function POST(request: NextRequest) {
   const alcance = aBloques(body.alcance);
   const entregables = aEntregables(body.entregables);
   const fases = aFases(body.fases);
+  const pagos = aPagos(body.pagos);
   const stack = aArreglo(body.stack);
   const condiciones = aArreglo(body.condiciones);
   const password = texto(body.password);
@@ -129,6 +146,7 @@ export async function POST(request: NextRequest) {
     moneda: texto(body.moneda) || "USD",
     fases,
     condiciones,
+    ...(pagos.length > 0 ? { pagos } : {}),
     estado: "enviada",
     creada: new Date().toISOString().slice(0, 10),
     validaHasta: texto(body.validaHasta) || undefined,

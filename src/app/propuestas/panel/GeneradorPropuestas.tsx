@@ -17,6 +17,7 @@ import { Card } from "@/components/ui/Card";
 import {
   MODALIDADES,
   calcularCuotas,
+  cuotasDePropuesta,
   formatearMonto,
   type Propuesta,
 } from "@/lib/propuestas";
@@ -31,6 +32,22 @@ const labelText = "text-sm font-medium text-text-primary";
 
 function reemplazar<T>(lista: T[], index: number, valor: T): T[] {
   return lista.map((item, i) => (i === index ? valor : item));
+}
+
+function parsearPagos(texto: string) {
+  return texto
+    .split("\n")
+    .map((linea) => {
+      const [etiqueta, monto] = linea.split("|");
+      return {
+        etiqueta: (etiqueta || "").trim(),
+        monto: Number((monto || "").replace(/[^0-9.]/g, "")),
+      };
+    })
+    .filter(
+      (pago) =>
+        pago.etiqueta && Number.isFinite(pago.monto) && pago.monto > 0
+    );
 }
 
 export function GeneradorPropuestas({
@@ -49,6 +66,7 @@ export function GeneradorPropuestas({
   const [inversion, setInversion] = React.useState("720");
   const [moneda, setMoneda] = React.useState("USD");
   const [tiempo, setTiempo] = React.useState("");
+  const [pagos, setPagos] = React.useState("");
   const [validaHasta, setValidaHasta] = React.useState("");
   const [alcance, setAlcance] = React.useState<BloqueForm[]>([
     { titulo: "", descripcion: "" },
@@ -65,6 +83,7 @@ export function GeneradorPropuestas({
   const [creada, setCreada] = React.useState<Propuesta | null>(null);
 
   const inversionNum = Number(inversion) || 0;
+  const pagosLista = React.useMemo(() => parsearPagos(pagos), [pagos]);
 
   function limpiar() {
     setTitulo("");
@@ -76,6 +95,7 @@ export function GeneradorPropuestas({
     setInversion("720");
     setMoneda("USD");
     setTiempo("");
+    setPagos("");
     setValidaHasta("");
     setAlcance([{ titulo: "", descripcion: "" }]);
     setEntregables([{ titulo: "", descripcion: "" }]);
@@ -106,6 +126,7 @@ export function GeneradorPropuestas({
       entregables: entregables.filter((b) => b.titulo || b.descripcion),
       fases: fases.filter((f) => f.titulo || f.detalle || f.periodo),
       condiciones,
+      pagos: pagosLista.length > 0 ? pagosLista : undefined,
     };
 
     try {
@@ -295,10 +316,45 @@ export function GeneradorPropuestas({
                   placeholder="3 a 4 semanas"
                 />
               </label>
+              <label className="flex flex-col gap-2 md:col-span-2">
+                <span className={labelText}>Cuotas acordadas (opcional)</span>
+                <textarea
+                  className={`${inputClass} resize-none font-mono text-xs`}
+                  rows={4}
+                  value={pagos}
+                  onChange={(e) => setPagos(e.target.value)}
+                  placeholder={"Inicio | 372\nA la mitad | 279\nContra entrega | 279"}
+                />
+                <span className="text-xs text-text-tertiary">
+                  Una cuota por línea con el formato Etiqueta | Monto. Si lo
+                  dejas vacío, el cliente elige entre 2 o 3 pagos.
+                </span>
+              </label>
             </div>
 
             {inversionNum > 0 ? (
-              <div className="grid grid-cols-1 gap-4 border-t border-white/5 pt-6 md:grid-cols-2">
+              pagosLista.length > 0 ? (
+                <div className="flex flex-col gap-2 rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                  <span className="text-sm font-semibold text-text-primary">
+                    Cuotas acordadas
+                  </span>
+                  {cuotasDePropuesta(
+                    { inversion: inversionNum, pagos: pagosLista },
+                    pagosLista.length > 1 ? "3-pagos" : "2-pagos"
+                  ).map((cuota) => (
+                    <div
+                      key={cuota.numero}
+                      className="flex items-center justify-between gap-4 text-xs text-text-secondary"
+                    >
+                      <span>{cuota.etiqueta}</span>
+                      <span className="shrink-0 font-semibold text-text-primary">
+                        {formatearMonto(cuota.monto, moneda)} ({cuota.porcentaje}%)
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 gap-4 border-t border-white/5 pt-6 md:grid-cols-2">
                 {(Object.keys(MODALIDADES) as Array<
                   keyof typeof MODALIDADES
                 >).map((id) => (
@@ -322,7 +378,8 @@ export function GeneradorPropuestas({
                     ))}
                   </div>
                 ))}
-              </div>
+                </div>
+              )
             ) : null}
           </Card>
 

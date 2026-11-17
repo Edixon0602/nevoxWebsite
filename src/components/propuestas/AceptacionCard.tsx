@@ -12,23 +12,31 @@ import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import {
   MODALIDADES,
   calcularCuotas,
+  cuotasDePropuesta,
   formatearMonto,
   type Aceptacion,
   type ModalidadPago,
+  type PagoAcordado,
 } from "@/lib/propuestas";
 
 export function AceptacionCard({
   slug,
   inversion,
   moneda,
+  pagos,
   aceptacionInicial = null,
 }: {
   slug: string;
   inversion: number;
   moneda: string;
+  pagos?: PagoAcordado[];
   aceptacionInicial?: Aceptacion | null;
 }) {
-  const [modalidad, setModalidad] = React.useState<ModalidadPago>("2-pagos");
+  const planFijo = Boolean(pagos && pagos.length > 0);
+  const modalidadInicial: ModalidadPago =
+    pagos && pagos.length > 1 ? "3-pagos" : "2-pagos";
+  const [modalidad, setModalidad] =
+    React.useState<ModalidadPago>(modalidadInicial);
   const [acepto, setAcepto] = React.useState(false);
   const [nombre, setNombre] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -80,7 +88,10 @@ export function AceptacionCard({
   }
 
   if (aceptacion) {
-    const cuotasAceptadas = calcularCuotas(inversion, aceptacion.modalidad);
+    const cuotasAceptadas = cuotasDePropuesta(
+      { inversion, pagos },
+      aceptacion.modalidad
+    );
     return (
       <SectionWrapper size="default" className="bg-accent/[0.04]">
         <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 lg:gap-16">
@@ -95,11 +106,17 @@ export function AceptacionCard({
                   Propuesta aceptada
                 </h3>
                 <p className="text-sm text-text-secondary">
-                  Gracias, {aceptacion.nombre}. Registramos tu aceptación con
-                  modalidad de{" "}
-                  <strong className="text-text-primary">
-                    {MODALIDADES[aceptacion.modalidad].nombre}
-                  </strong>
+                  Gracias, {aceptacion.nombre}. Registramos tu aceptación{" "}
+                  {planFijo ? (
+                    "con la forma de pago acordada"
+                  ) : (
+                    <>
+                      con modalidad de{" "}
+                      <strong className="text-text-primary">
+                        {MODALIDADES[aceptacion.modalidad].nombre}
+                      </strong>
+                    </>
+                  )}
                   .
                 </p>
               </div>
@@ -146,15 +163,38 @@ export function AceptacionCard({
           <Card innerClassName="flex flex-col gap-6">
             <div className="flex flex-col gap-1">
               <h3 className="font-display text-2xl font-bold text-text-primary">
-                Elige tu modalidad de pago
+                {planFijo ? "Forma de pago acordada" : "Elige tu modalidad de pago"}
               </h3>
               <p className="text-sm text-text-secondary">
-                Puedes pagar en 2 cuotas (50% / 50%) o en 3 cuotas (33% / 33% /
-                33%).
+                {planFijo
+                  ? "El pago se realiza contra los hitos de esta propuesta."
+                  : "Puedes pagar en 2 cuotas (50% / 50%) o en 3 cuotas (33% / 33% / 33%)."}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {planFijo ? (
+              <div className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/[0.02] p-5">
+                {cuotasDePropuesta({ inversion, pagos }, modalidad).map(
+                  (cuota) => (
+                    <div
+                      key={cuota.numero}
+                      className="flex items-center justify-between gap-4 text-sm"
+                    >
+                      <span className="text-text-secondary">
+                        {cuota.etiqueta}
+                      </span>
+                      <span className="shrink-0 font-semibold text-text-primary">
+                        {formatearMonto(cuota.monto, moneda)}{" "}
+                        <span className="text-text-tertiary">
+                          ({cuota.porcentaje}%)
+                        </span>
+                      </span>
+                    </div>
+                  )
+                )}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {(Object.keys(MODALIDADES) as ModalidadPago[]).map((id) => {
                 const modalidadItem = MODALIDADES[id];
                 const cuotasItem = calcularCuotas(inversion, id);
@@ -205,8 +245,9 @@ export function AceptacionCard({
                     </div>
                   </button>
                 );
-              })}
-            </div>
+                })}
+              </div>
+            )}
           </Card>
 
           <Card innerClassName="flex flex-col gap-5">
@@ -262,8 +303,10 @@ export function AceptacionCard({
                 <strong className="text-text-primary">
                   {formatearMonto(inversion, moneda)}
                 </strong>{" "}
-                y los términos de esta propuesta, con la modalidad de pago
-                seleccionada.
+                y los términos de esta propuesta,{" "}
+                {planFijo
+                  ? "con la forma de pago acordada."
+                  : "con la modalidad de pago seleccionada."}
               </span>
             </label>
 

@@ -1,5 +1,5 @@
 import type { Aceptacion, ModalidadPago, Propuesta } from "./propuestas";
-import { calcularCuotas } from "./propuestas";
+import { cuotasDePropuesta } from "./propuestas";
 
 const ADMIN_BASE_URL = (process.env.NEVOX_ADMIN_API_URL || "").replace(
   /\/+$/,
@@ -108,7 +108,7 @@ export async function registrarAceptacionAdmin(
     aceptacion: {
       aceptada: true,
       modalidad: aceptacion.modalidad,
-      cuotas: calcularCuotas(propuesta.inversion, aceptacion.modalidad),
+      cuotas: cuotasDePropuesta(propuesta, aceptacion.modalidad),
       nombre: aceptacion.nombre,
       email: aceptacion.email,
       nota: aceptacion.nota,

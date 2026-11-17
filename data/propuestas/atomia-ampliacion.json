@@ -1,0 +1,154 @@
+{
+  "slug": "atomia-ampliacion",
+  "titulo": "Ampliación atomIA — Control contable, calculadora y bot de intervención",
+  "proyecto": "Ampliación de alcance del sistema de automatización P2P",
+  "cliente": "",
+  "resumen": "Tu operación con atomIA ya automatiza la compra de órdenes y el pago desde el banco. Esta ampliación cubre lo que todavía se hace a mano: el registro de cada operación, la conciliación de comprobantes, el cierre contable del período y el cálculo de rentabilidad antes de operar. Suma además el bot de compra en la intervención cambiaria, la conexión con un teléfono Android físico y una página pública con registro y activación de planes. El objetivo es que trabajes con información completa y que no dependas de la velocidad humana en los momentos donde cada segundo cuenta.",
+  "alcance": [
+    {
+      "titulo": "Registro automático de todas las operaciones",
+      "descripcion": "El sistema trae las compras y las ventas de Binance sin intervención tuya: número de orden, tipo, fecha y hora de Binance, monto en bolívares, monto en USDT, precio unitario, contraparte, método y banco de pago, referencia, comisión y estado. Importa los últimos seis meses y sigue sincronizando en tiempo real, incluidas las órdenes que se completaron mientras el equipo estaba apagado y las que pasaron por apelación. Repetir la sincronización nunca duplica operaciones."
+    },
+    {
+      "titulo": "Lectura automática de comprobantes",
+      "descripcion": "Cuando el comprobante llega al chat de la orden, el sistema lo lee y extrae la referencia, el monto, el banco y la fecha, para los formatos del Banco de Venezuela y de Mercantil. Si una orden se paga en varias transferencias, suma los comprobantes parciales. Cuando la lectura no es confiable, la marca para revisión en lugar de adivinar: ves la imagen, los datos detectados y confirmas o corriges. El comprobante queda adjunto a la orden aunque la lectura falle."
+    },
+    {
+      "titulo": "Libro contable listo para descargar",
+      "descripcion": "Genera el libro del período en Excel y en un formato compatible con cualquier hoja de cálculo. Incluye un resumen con los totales, el libro diario, el detalle de cada operación, el movimiento por banco, las comisiones y una hoja de conciliación con las órdenes sin comprobante, con monto distinto o con referencia dudosa. Puedes filtrar por fechas y el sistema verifica que la suma de las operaciones coincida con el movimiento real de USDT; si algo no cuadra, la hoja de conciliación lo señala."
+    },
+    {
+      "titulo": "Calculadora de rentabilidad",
+      "descripcion": "Calcula tu ganancia antes de operar: pares USDT/bolívares y USDT/dólar, capital en USDT o en bolívares, niveles de comisión de Binance, orden de compra y de venta, y el costo de cada método de pago (Pago Móvil y transferencia). Devuelve la tasa mínima de compra, la ganancia por ciclo en dólares y en porcentaje, la diferencia entre la tasa de compra y la de venta, el punto de equilibrio, la proyección diaria y a 30 días, y el volumen operado. Puedes guardar cada cálculo y consultar el historial, con precio referencial de Bitcoin."
+    },
+    {
+      "titulo": "Bot de compra en la intervención cambiaria",
+      "descripcion": "El bot entra a la ventana del banco preparado antes de la hora: sesión iniciada, aplicación posicionada y monto cargado. Consulta disponibilidad con una espera inteligente, reconoce cada tipo de error (sin cupo, fuera de horario, sesión caída, mantenimiento, límite excedido, tiempo agotado, captcha) y compra con confirmación, código de seguridad y comprobante. Registra cada intento con hora, paso y captura de pantalla, y te avisa por Telegram cuando la ventana abre, cuando compra y cuando falla. Si la aplicación se cuelga, se actualiza o cierra sesión, se recupera y vuelve a entrar. La primera semana es de viabilidad: se documenta el flujo real, se prueba el recorrido sin comprar y se entrega un informe con recomendación para continuar o detenerse. Incluye afinado en tres ventanas reales y un modo de simulación para practicar sin ventana."
+    },
+    {
+      "titulo": "Conexión con teléfonos Android físicos",
+      "descripcion": "Revisamos el gestor de dispositivos actual y lo preparamos para trabajar con un teléfono Android físico por agente: reconocimiento por número de serie, autorización por cable, reconexión automática y ajuste a distintas resoluciones. El sistema elige el dispositivo correcto cuando hay un emulador y un teléfono conectados al mismo tiempo. Se prueba con el equipo que entregues y se entrega una guía para repetir la configuración desde cero. No incluye granjas de varios teléfonos, gestión remota de equipos ni iPhone."
+    },
+    {
+      "titulo": "Página pública, planes y autoservicio",
+      "descripcion": "Una página pública presenta el producto, sus funciones, los planes con sus precios, las preguntas frecuentes y una llamada a la acción. El usuario se registra con nombre, correo, contraseña y plan de interés; verifica su correo, recupera su contraseña y recibe automáticamente su cuenta y su espacio de trabajo. Una guía de inicio lo acompaña para conectar Binance, generar el código del agente y descargar el instalador. Desde un panel administras los registros y activas o rechazas cada plan. La página funciona en teléfono y en computadora. Los textos legales los entregas tú y nosotros los publicamos."
+    }
+  ],
+  "entregables": [
+    {
+      "titulo": "Registro completo y conciliado",
+      "descripcion": "Historial de seis meses completo, con la fecha y la comisión de Binance. Una segunda sincronización no crea duplicados y una orden completada con el sistema apagado se recupera al encender."
+    },
+    {
+      "titulo": "Comprobantes leídos y revisables",
+      "descripcion": "Ocho de cada diez comprobantes de tus muestras se leen correctamente. Los casos dudosos quedan marcados para revisión y nunca se asignan en silencio a otra orden."
+    },
+    {
+      "titulo": "Libro contable del período",
+      "descripcion": "El archivo abre en Excel sin reparaciones, los totales coinciden con el historial de Binance del período y la versión de hoja de cálculo trae las mismas columnas que el detalle de operaciones."
+    },
+    {
+      "titulo": "Calculadora de rentabilidad",
+      "descripcion": "Con los mismos datos de entrada, el resultado coincide con tu calculadora de referencia con un margen de un centavo, y el historial se conserva entre sesiones."
+    },
+    {
+      "titulo": "Bot de intervención",
+      "descripcion": "En simulación completa todo el flujo hasta la confirmación. En una ventana real registra el intento, no duplica compras y deja evidencia de cada paso, con un informe de resultados por ventana."
+    },
+    {
+      "titulo": "Dispositivo físico operativo",
+      "descripcion": "El agente se conecta al teléfono, resiste una desconexión y reconexión, ejecuta una operación de prueba y la guía permite replicar la configuración desde cero."
+    },
+    {
+      "titulo": "Autoservicio funcionando",
+      "descripcion": "Un usuario nuevo se registra, verifica su correo, inicia sesión y completa la puesta en marcha sin ayuda técnica. El administrador activa o rechaza el plan desde el panel."
+    },
+    {
+      "titulo": "Documentación y cierre",
+      "descripcion": "Guías de uso y operación, pruebas de aceptación verificadas y puesta en marcha en el servidor actual."
+    }
+  ],
+  "stack": [],
+  "tiempo": "8 a 10 semanas",
+  "inversion": 930,
+  "moneda": "USD",
+  "pagos": [
+    {
+      "etiqueta": "Inicio y primera semana del bot",
+      "monto": 372
+    },
+    {
+      "etiqueta": "Registro, comprobantes, libro contable, calculadora y página",
+      "monto": 279
+    },
+    {
+      "etiqueta": "Entrega del bot y del dispositivo físico",
+      "monto": 279
+    }
+  ],
+  "fases": [
+    {
+      "periodo": "Semana 1",
+      "titulo": "Viabilidad del bot, calculadora y estructura de datos",
+      "detalle": "Se documenta el flujo real de la intervención, se prueba el recorrido sin comprar y se entrega el informe con la recomendación. En paralelo quedan listas la calculadora y la estructura que ordena las operaciones."
+    },
+    {
+      "periodo": "Semana 2",
+      "titulo": "Historial de operaciones y lectura de comprobantes",
+      "detalle": "Importación de los últimos seis meses, sincronización continua y lectura de comprobantes del Banco de Venezuela y de Mercantil."
+    },
+    {
+      "periodo": "Semana 3",
+      "titulo": "Pantalla de revisión y libro contable",
+      "detalle": "Revisión y corrección de comprobantes dudosos, más el libro contable en Excel y en formato de hoja de cálculo, con su hoja de conciliación."
+    },
+    {
+      "periodo": "Semana 4",
+      "titulo": "Página pública, planes y registro",
+      "detalle": "Página con propuesta de valor, funciones, precios y preguntas frecuentes, más el registro de usuarios con verificación de correo."
+    },
+    {
+      "periodo": "Semana 5",
+      "titulo": "Puesta en marcha y activación de planes",
+      "detalle": "Recorrido guiado para conectar Binance, generar el código del agente y descargar el instalador, con el panel para activar o rechazar planes."
+    },
+    {
+      "periodo": "Semanas 5 a 6",
+      "titulo": "Bot y conexión del dispositivo físico",
+      "detalle": "Programación de la ventana, precalentamiento, compra con confirmación, avisos y registro de intentos, más la puesta a punto con tu teléfono Android."
+    },
+    {
+      "periodo": "Semanas 7 a 8",
+      "titulo": "Pruebas integrales y ventanas reales",
+      "detalle": "Afinado del bot en tres ventanas reales, pruebas de extremo a extremo y corrección de detalles."
+    },
+    {
+      "periodo": "Semanas 9 a 10",
+      "titulo": "Aceptación, documentación y cierre",
+      "detalle": "Pruebas de aceptación contigo, documentación de uso y puesta en marcha definitiva."
+    }
+  ],
+  "condiciones": [
+    "Inversión total de la ampliación: $930 USD, con 30 días de garantía por fallas funcionales.",
+    "Forma de pago: $372 al inicio, $279 a la entrega del registro, los comprobantes, el libro contable, la calculadora y la página, y $279 a la entrega del bot y del dispositivo físico.",
+    "Cada bloque se entrega desplegado y funcionando en el sistema actual, no como código pendiente de instalar.",
+    "Plazo estimado: 8 a 10 semanas desde el pago inicial. La fecha del bot depende de cuándo abra la intervención real; el resto del alcance no depende de eso.",
+    "Incluye desarrollo, pruebas, puesta en marcha en el servidor actual y documentación de uso.",
+    "No incluye hosting, dominio, licencias de terceros, costos de telefonía o datos, ni soporte posterior a la garantía.",
+    "Los cambios posteriores a la entrega se cotizan a $10 por hora. El mantenimiento mensual del área contable y del bot es opcional y se ofrece por separado en $160 al mes.",
+    "Fuera de alcance: recibos en PDF con código QR o envío al chat, motor de ciclos y ganancia por vuelta, control de gastos y facturas fiscales, tasas oficiales automáticas, IVA, bot de consulta por Telegram, cobro automático y suscripciones, aplicación móvil nativa, granjas de varios dispositivos o cuentas, asesoría contable o legal y migración de datos desde otro sistema. Cada uno se cotiza aparte si lo necesitas.",
+    "La lectura de comprobantes de otros bancos (Banesco, Provincial y BNC) se cotiza entre $45 y $60 por banco.",
+    "Necesitamos de tu parte: 5 a 10 capturas de comprobantes por banco, un teléfono Android con la depuración por cable habilitada, video o capturas de al menos una ventana real y la definición de los planes con nombre, precio, límites y funciones.",
+    "Necesitamos también tu logo, colores y textos legales, servidor y dominio con certificado de seguridad activo, credenciales de correo para verificación y recuperación, y acceso de solo lectura a Binance.",
+    "Si falta algún insumo, el cronograma corre desde que se recibe y el trabajo adicional se cotiza a $10 por hora.",
+    "El bot no evade captchas, no falsifica el dispositivo y no opera más de una cuenta. No se garantiza capturar el 100% de las ventanas: depende del cupo, la cola y la red del banco.",
+    "La lectura de comprobantes no es infalible: los casos dudosos se marcan para revisión y nunca se asignan en silencio a otra orden.",
+    "Si el banco limita o bloquea la cuenta, el cliente asume el riesgo y los términos del banco; no se evaden controles.",
+    "Si la aplicación del banco cambia sus pantallas tras una actualización, el ajuste forma parte del mantenimiento mensual. Otros modelos de teléfono distintos al que entregues se cotizan aparte.",
+    "La propuesta es válida por 30 días desde su emisión y requiere aprobación por escrito antes de iniciar."
+  ],
+  "estado": "enviada",
+  "creada": "2026-11-17",
+  "validaHasta": "2026-12-17",
+  "aceptacion": null
+}

@@ -82,6 +82,7 @@ export default async function PropuestaPage({ params }: Props) {
           slug={propuesta.slug}
           inversion={propuesta.inversion}
           moneda={propuesta.moneda}
+          pagos={propuesta.pagos}
           aceptacionInicial={propuesta.aceptacion ?? null}
         />
       </PropuestaView>

@@ -12,6 +12,7 @@ import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import {
   MODALIDADES,
   calcularCuotas,
+  cuotasDePropuesta,
   formatearFecha,
   formatearMonto,
   type Propuesta,
@@ -47,6 +48,9 @@ export function PropuestaView({
   const nombreCliente = propuesta.cliente?.trim();
   const mostrarCliente =
     !!nombreCliente && nombreCliente.toLowerCase() !== "cliente";
+  const cuotasAcordadas = propuesta.pagos?.length
+    ? cuotasDePropuesta(propuesta, "3-pagos")
+    : null;
 
   return (
     <div className="w-full">
@@ -270,8 +274,9 @@ export function PropuestaView({
                   </div>
                 </div>
                 <p className="max-w-xs text-sm text-text-secondary leading-relaxed">
-                  Elige la modalidad de pago que prefieras al momento de aceptar
-                  la propuesta.
+                  {cuotasAcordadas
+                    ? "La forma de pago queda acordada con los hitos de esta propuesta."
+                    : "Elige la modalidad de pago que prefieras al momento de aceptar la propuesta."}
                 </p>
               </div>
               {propuesta.costoServidor ? (
@@ -305,47 +310,81 @@ export function PropuestaView({
               ) : null}
             </Card>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {(Object.keys(MODALIDADES) as Array<
-                keyof typeof MODALIDADES
-              >).map((id) => {
-                const modalidad = MODALIDADES[id];
-                const cuotas = calcularCuotas(propuesta.inversion, id);
-                return (
-                  <Card key={id} innerClassName="flex flex-col gap-5">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-display text-xl font-bold text-text-primary">
-                        {modalidad.nombre}
-                      </h3>
-                      <span className="text-xs font-semibold uppercase tracking-widest text-accent">
-                        {modalidad.hitos.length} cuotas
+            {cuotasAcordadas ? (
+              <Card innerClassName="flex flex-col gap-5 md:max-w-xl">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-display text-xl font-bold text-text-primary">
+                    Forma de pago acordada
+                  </h3>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+                    {cuotasAcordadas.length} cuotas
+                  </span>
+                </div>
+                <p className="text-sm text-text-secondary">
+                  Cada pago se realiza contra el hito correspondiente.
+                </p>
+                <div className="flex flex-col gap-3 border-t border-white/5 pt-4">
+                  {cuotasAcordadas.map((cuota) => (
+                    <div
+                      key={cuota.numero}
+                      className="flex items-center justify-between gap-4 text-sm"
+                    >
+                      <span className="text-text-secondary">
+                        {cuota.etiqueta}
+                      </span>
+                      <span className="shrink-0 font-semibold text-text-primary">
+                        {formatearMonto(cuota.monto, propuesta.moneda)}{" "}
+                        <span className="text-text-tertiary">
+                          ({cuota.porcentaje}%)
+                        </span>
                       </span>
                     </div>
-                    <p className="text-sm text-text-secondary">
-                      {modalidad.descripcion}
-                    </p>
-                    <div className="flex flex-col gap-3 border-t border-white/5 pt-4">
-                      {cuotas.map((cuota) => (
-                        <div
-                          key={cuota.numero}
-                          className="flex items-center justify-between text-sm"
-                        >
-                          <span className="text-text-secondary">
-                            {cuota.etiqueta}
-                          </span>
-                          <span className="font-semibold text-text-primary">
-                            {formatearMonto(cuota.monto, propuesta.moneda)}{" "}
-                            <span className="text-text-tertiary">
-                              ({cuota.porcentaje}%)
+                  ))}
+                </div>
+              </Card>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {(Object.keys(MODALIDADES) as Array<
+                  keyof typeof MODALIDADES
+                >).map((id) => {
+                  const modalidad = MODALIDADES[id];
+                  const cuotas = calcularCuotas(propuesta.inversion, id);
+                  return (
+                    <Card key={id} innerClassName="flex flex-col gap-5">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-display text-xl font-bold text-text-primary">
+                          {modalidad.nombre}
+                        </h3>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+                          {modalidad.hitos.length} cuotas
+                        </span>
+                      </div>
+                      <p className="text-sm text-text-secondary">
+                        {modalidad.descripcion}
+                      </p>
+                      <div className="flex flex-col gap-3 border-t border-white/5 pt-4">
+                        {cuotas.map((cuota) => (
+                          <div
+                            key={cuota.numero}
+                            className="flex items-center justify-between text-sm"
+                          >
+                            <span className="text-text-secondary">
+                              {cuota.etiqueta}
                             </span>
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </Card>
-                );
-              })}
-            </div>
+                            <span className="font-semibold text-text-primary">
+                              {formatearMonto(cuota.monto, propuesta.moneda)}{" "}
+                              <span className="text-text-tertiary">
+                                ({cuota.porcentaje}%)
+                              </span>
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </Card>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </SectionWrapper>
