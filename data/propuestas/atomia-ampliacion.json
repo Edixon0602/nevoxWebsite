@@ -7,27 +7,27 @@
   "alcance": [
     {
       "titulo": "Registro automático de todas las operaciones",
-      "descripcion": "El sistema trae las compras y las ventas de Binance sin intervención tuya: número de orden, tipo, fecha y hora de Binance, monto en bolívares, monto en USDT, precio unitario, contraparte, método y banco de pago, referencia, comisión y estado. Importa los últimos seis meses y sigue sincronizando en tiempo real, incluidas las órdenes que se completaron mientras el equipo estaba apagado y las que pasaron por apelación. Repetir la sincronización nunca duplica operaciones."
+      "descripcion": "El sistema trae las compras y las ventas de Binance sin intervención tuya, con los datos de cada operación: montos, precio, contraparte, método y banco de pago, referencia, comisión y estado. Importa el historial y se mantiene sincronizado, incluidas las órdenes que se completaron mientras el equipo estaba apagado y las que pasaron por apelación. Repetir la sincronización nunca duplica operaciones."
     },
     {
       "titulo": "Lectura automática de comprobantes",
-      "descripcion": "Cuando el comprobante llega al chat de la orden, el sistema lo lee y extrae la referencia, el monto, el banco y la fecha, para los formatos del Banco de Venezuela y de Mercantil. Si una orden se paga en varias transferencias, suma los comprobantes parciales. Cuando la lectura no es confiable, la marca para revisión en lugar de adivinar: ves la imagen, los datos detectados y confirmas o corriges. El comprobante queda adjunto a la orden aunque la lectura falle."
+      "descripcion": "Cuando el comprobante llega al chat de la orden, el sistema lo lee y completa los datos de la operación, para los formatos del Banco de Venezuela y de Mercantil. Si una orden se paga en varias transferencias, suma los comprobantes parciales. Cuando la lectura no es confiable, la marca para revisión en lugar de adivinar: ves la imagen, los datos detectados y confirmas o corriges. El comprobante queda adjunto a la orden aunque la lectura falle."
     },
     {
       "titulo": "Libro contable listo para descargar",
-      "descripcion": "Genera el libro del período en Excel y en un formato compatible con cualquier hoja de cálculo. Incluye un resumen con los totales, el libro diario, el detalle de cada operación, el movimiento por banco, las comisiones y una hoja de conciliación con las órdenes sin comprobante, con monto distinto o con referencia dudosa. Puedes filtrar por fechas y el sistema verifica que la suma de las operaciones coincida con el movimiento real de USDT; si algo no cuadra, la hoja de conciliación lo señala."
+      "descripcion": "Genera el libro del período en Excel y en un formato compatible con cualquier hoja de cálculo, con los totales, el detalle diario y por operación, el movimiento por banco, las comisiones y una hoja de conciliación para los casos que no cuadran. Puedes filtrar por fechas y el sistema verifica que la suma de las operaciones coincida con el movimiento real de USDT."
     },
     {
       "titulo": "Calculadora de rentabilidad",
-      "descripcion": "Calcula tu ganancia antes de operar: pares USDT/bolívares y USDT/dólar, capital en USDT o en bolívares, niveles de comisión de Binance, orden de compra y de venta, y el costo de cada método de pago (Pago Móvil y transferencia). Devuelve la tasa mínima de compra, la ganancia por ciclo en dólares y en porcentaje, la diferencia entre la tasa de compra y la de venta, el punto de equilibrio, la proyección diaria y a 30 días, y el volumen operado. Puedes guardar cada cálculo y consultar el historial, con precio referencial de Bitcoin."
+      "descripcion": "Calcula tu ganancia antes de operar: pares, capital, niveles de comisión, tipo de orden y costo de cada método de pago. Devuelve la tasa mínima de compra, la ganancia por ciclo, el punto de equilibrio y la proyección diaria y mensual. Puedes guardar cada cálculo y consultar el historial, con precio referencial de Bitcoin."
     },
     {
       "titulo": "Bot de compra en la intervención cambiaria",
-      "descripcion": "El bot entra a la ventana del banco preparado antes de la hora: sesión iniciada, aplicación posicionada y monto cargado. Consulta disponibilidad con una espera inteligente, reconoce cada tipo de error (sin cupo, fuera de horario, sesión caída, mantenimiento, límite excedido, tiempo agotado, captcha) y compra con confirmación, código de seguridad y comprobante. Registra cada intento con hora, paso y captura de pantalla, y te avisa por Telegram cuando la ventana abre, cuando compra y cuando falla. Si la aplicación se cuelga, se actualiza o cierra sesión, se recupera y vuelve a entrar. La primera semana es de viabilidad: se documenta el flujo real, se prueba el recorrido sin comprar y se entrega un informe con recomendación para continuar o detenerse. Incluye afinado en tres ventanas reales y un modo de simulación para practicar sin ventana."
+      "descripcion": "El bot entra a la ventana del banco preparado antes de la hora: sesión iniciada, aplicación posicionada y monto cargado. Consulta disponibilidad con una espera inteligente, reconoce los errores habituales del banco y compra con confirmación, código de seguridad y comprobante. Registra cada intento con hora, paso y captura de pantalla, y te avisa por Telegram cuando la ventana abre, cuando compra y cuando falla. Si la aplicación se cuelga, se actualiza o cierra sesión, se recupera y vuelve a entrar. Al inicio hay una fase de viabilidad: se documenta el flujo real, se prueba el recorrido sin comprar y se entrega un informe con recomendación para continuar o detenerse. Incluye afinado en ventanas reales y un modo de simulación para practicar sin ventana."
     },
     {
       "titulo": "Conexión con teléfonos Android físicos",
-      "descripcion": "Revisamos el gestor de dispositivos actual y lo preparamos para trabajar con un teléfono Android físico por agente: reconocimiento por número de serie, autorización por cable, reconexión automática y ajuste a distintas resoluciones. El sistema elige el dispositivo correcto cuando hay un emulador y un teléfono conectados al mismo tiempo. Se prueba con el equipo que entregues. No incluye granjas de varios teléfonos, gestión remota de equipos ni iPhone."
+      "descripcion": "Revisamos el gestor de dispositivos actual y lo preparamos para trabajar con un teléfono Android físico por agente, con detección del equipo, reconexión automática y soporte para distintas pantallas. El sistema elige el dispositivo correcto cuando hay un emulador y un teléfono conectados al mismo tiempo. Se prueba con el equipo que entregues. No incluye granjas de varios teléfonos, gestión remota de equipos ni iPhone."
     },
     {
       "titulo": "Página pública, planes y autoservicio",
@@ -37,11 +37,11 @@
   "entregables": [
     {
       "titulo": "Registro completo y conciliado",
-      "descripcion": "Historial de seis meses completo, con la fecha y la comisión de Binance. Una segunda sincronización no crea duplicados y una orden completada con el sistema apagado se recupera al encender."
+      "descripcion": "Historial completo del período, con la fecha y la comisión de Binance. Una segunda sincronización no crea duplicados y una orden completada con el sistema apagado se recupera al encender."
     },
     {
       "titulo": "Comprobantes leídos y revisables",
-      "descripcion": "Ocho de cada diez comprobantes de tus muestras se leen correctamente. Los casos dudosos quedan marcados para revisión y nunca se asignan en silencio a otra orden."
+      "descripcion": "Los comprobantes de tus muestras se leen correctamente y los casos dudosos quedan marcados para revisión."
     },
     {
       "titulo": "Libro contable del período",
@@ -49,7 +49,7 @@
     },
     {
       "titulo": "Calculadora de rentabilidad",
-      "descripcion": "Con los mismos datos de entrada, el resultado coincide con tu calculadora de referencia con un margen de un centavo, y el historial se conserva entre sesiones."
+      "descripcion": "El resultado coincide con tu calculadora de referencia y el historial se conserva entre sesiones."
     },
     {
       "titulo": "Bot de intervención",
@@ -88,12 +88,12 @@
     "No incluye dominio, licencias de terceros, costos de telefonía o datos, ni soporte posterior a la garantía.",
     "Los cambios posteriores a la entrega se cotizan a $10 por hora. El mantenimiento mensual del área contable y del bot es opcional y se ofrece por separado en $160 al mes.",
     "Fuera de alcance: recibos en PDF con código QR o envío al chat, motor de ciclos y ganancia por vuelta, control de gastos y facturas fiscales, tasas oficiales automáticas, IVA, bot de consulta por Telegram, cobro automático y suscripciones, aplicación móvil nativa, granjas de varios dispositivos o cuentas, asesoría contable o legal y migración de datos desde otro sistema. Cada uno se cotiza aparte si lo necesitas.",
-    "La lectura de comprobantes de otros bancos (Banesco, Provincial y BNC) se cotiza entre $45 y $60 por banco.",
-    "Necesitamos de tu parte: 5 a 10 capturas de comprobantes por banco, un teléfono Android con la depuración por cable habilitada, video o capturas de al menos una ventana real y la definición de los planes con nombre, precio, límites y funciones.",
+    "La lectura de comprobantes de otros bancos (Banesco, Provincial y BNC) se cotiza por separado.",
+    "Necesitamos de tu parte: capturas de comprobantes de cada banco, un teléfono Android con la depuración por cable habilitada, video o capturas de una ventana real y la definición de los planes con nombre, precio, límites y funciones.",
     "Necesitamos también tu logo, colores y textos legales, credenciales de correo del dominio para verificación y recuperación, y acceso de solo lectura a Binance.",
     "Si falta algún insumo, el cronograma corre desde que se recibe y el trabajo adicional se cotiza a $10 por hora.",
-    "El bot no evade captchas, no falsifica el dispositivo y no opera más de una cuenta. No se garantiza capturar el 100% de las ventanas: depende del cupo, la cola y la red del banco.",
-    "La lectura de comprobantes no es infalible: los casos dudosos se marcan para revisión y nunca se asignan en silencio a otra orden.",
+    "El bot no evade captchas, no falsifica el dispositivo y no opera más de una cuenta. No se garantiza capturar todas las ventanas: depende del cupo, la cola y la red del banco.",
+    "La lectura de comprobantes no es infalible: los casos dudosos se marcan para revisión.",
     "Si el banco limita o bloquea la cuenta, el cliente asume el riesgo y los términos del banco; no se evaden controles.",
     "Si la aplicación del banco cambia sus pantallas tras una actualización, el ajuste forma parte del mantenimiento mensual. Otros modelos de teléfono distintos al que entregues se cotizan aparte.",
     "La propuesta es válida por 30 días desde su emisión y requiere aprobación por escrito antes de iniciar."
