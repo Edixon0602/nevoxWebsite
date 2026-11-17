@@ -48,6 +48,7 @@ export interface Propuesta {
     monto: number;
     periodicidad?: string;
     descripcion?: string;
+    nota?: string;
   };
   fases: Fase[];
   condiciones: string[];

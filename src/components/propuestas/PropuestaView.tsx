@@ -302,10 +302,11 @@ export function PropuestaView({
                       / {propuesta.costoServidor.periodicidad || "mes"}
                     </span>
                   </div>
-                  <p className="text-sm text-text-secondary leading-relaxed">
-                    Este costo se factura una vez el proyecto esté desplegado y
-                    operativo; no se cobra con el anticipo inicial.
-                  </p>
+                  {propuesta.costoServidor.nota ? (
+                    <p className="text-sm text-text-secondary leading-relaxed">
+                      {propuesta.costoServidor.nota}
+                    </p>
+                  ) : null}
                 </div>
               ) : null}
             </Card>

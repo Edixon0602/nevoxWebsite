@@ -99,7 +99,8 @@
   "costoServidor": {
     "monto": 20,
     "periodicidad": "mensual",
-    "descripcion": "Hosting del panel administrativo"
+    "descripcion": "Hosting del panel administrativo",
+    "nota": "Este costo se factura una vez el proyecto esté desplegado y operativo; no se cobra con el anticipo inicial."
   },
   "fases": [
     {
