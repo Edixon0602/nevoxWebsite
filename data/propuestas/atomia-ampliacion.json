@@ -27,7 +27,7 @@
     },
     {
       "titulo": "Conexión con teléfonos Android físicos",
-      "descripcion": "Revisamos el gestor de dispositivos actual y lo preparamos para trabajar con un teléfono Android físico por agente, con detección del equipo, reconexión automática y soporte para distintas pantallas. El sistema elige el dispositivo correcto cuando hay un emulador y un teléfono conectados al mismo tiempo. Se prueba con el equipo en uso. No incluye granjas de varios teléfonos, gestión remota de equipos ni iPhone."
+      "descripcion": "Revisamos el gestor de dispositivos actual y lo preparamos para trabajar con un teléfono Android físico por agente, con detección del equipo, reconexión automática y soporte para distintas pantallas. El sistema elige el dispositivo correcto cuando hay un emulador y un teléfono conectados al mismo tiempo."
     },
     {
       "titulo": "Página pública, planes y autoservicio",
@@ -91,7 +91,7 @@
     "El bot no evade captchas, no falsifica el dispositivo y no opera más de una cuenta. No se garantiza capturar todas las ventanas: depende del cupo, la cola y la red del banco.",
     "La lectura de comprobantes no es infalible: los casos dudosos se marcan para revisión.",
     "Si el banco limita o bloquea la cuenta, el cliente asume el riesgo y los términos del banco; no se evaden controles.",
-    "Si la aplicación del banco cambia sus pantallas tras una actualización, el ajuste forma parte del mantenimiento mensual. Otros modelos de teléfono se cotizan aparte.",
+    "Si la aplicación del banco cambia sus pantallas tras una actualización, el ajuste forma parte del mantenimiento mensual.",
     "La propuesta es válida por 30 días desde su emisión y requiere aprobación por escrito antes de iniciar."
   ],
   "estado": "enviada",
